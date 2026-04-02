@@ -34,7 +34,7 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="prose prose-invert max-w-none"
+              className="prose max-w-none"
             >
               <p className="text-lg text-muted-foreground leading-relaxed">
                 {data.personal.bio}

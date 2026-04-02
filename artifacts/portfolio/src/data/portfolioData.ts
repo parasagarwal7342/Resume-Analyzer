@@ -1,34 +1,34 @@
 export const portfolioData = {
   personal: {
-    name: "Paras Agrawal",
+    name: "PARAS AGRAWAL",
     initials: "PARAS",
-    title: "Cybersecurity Professional & Startup Founder",
-    tagline: "Defending the Digital Frontier — One Exploit at a Time",
-    bio: "Dynamic cybersecurity professional with a B.Tech in Computer Science, currently pursuing M.Tech in Information Security at Netaji Subhas University of Technology, Delhi. I specialize in Penetration Testing, Ethical Hacking, IAM, VAPT, and Incident Response. Beyond security, I'm the founder of Paraditi Corp — building next-generation fintech and fraud prevention products that protect India's digital economy.",
+    title: "Cybersecurity Enthusiast & Fresher",
+    tagline:
+      "Aspiring Cybersecurity Professional and Fresher, currently pursuing M.Tech in Information Security. Passionate about identifying vulnerabilities and building secure digital ecosystems. Architecting the vision for Paraditi Corp.",
+    bio:
+      "A motivated Cybersecurity Fresher with a B.Tech in Computer Science and currently pursuing M.Tech in Information Security at Netaji Subhas University of Technology, Delhi. I specialize in the fundamentals of Penetration Testing, Ethical Hacking, VAPT, and Incident Response. As a fresher, I am eager to apply my academic knowledge and certifications to real-world challenges. Beyond my studies, I am the visionary behind Paraditi Corp — a concept for a future startup where I am designing ideas for next-generation security and fraud prevention products to protect India's digital economy.",
     location: "New Delhi, India — 110081",
     email: "parasagarwal7342@gmail.com",
     phone: "+91 8587897399",
     linkedin: "https://linkedin.com/in/paras-agrawal-a1b691201",
-    github: "https://github.com/parasagrawal",
+    github: "https://github.com/parasagarwal7342",
     availableForWork: true,
     roles: [
-      "Cybersecurity Professional",
-      "Penetration Tester",
-      "Ethical Hacker",
-      "Security Analyst",
-      "Startup Founder @ Paraditi Corp",
-      "M.Tech Student — Information Security",
+      "Cybersecurity Aspirant",
+      "Pentesting Enthusiast",
+      "Paraditi Corp Visionary",
+      "CEH Certified Learner",
     ],
     taglines: [
-      "Defending the Digital Frontier, One Exploit at a Time",
-      "Turning Vulnerabilities into Victories",
-      "Security Professional & Startup Founder Building India's Cyber Future",
-      "From Penetration Testing to Product Building — Zero Trust, All Trust",
-      "Cybersecurity Expert | Ethical Hacker | Paraditi Corp Founder",
+      "Aspiring Cybersecurity Professional | Ethical Hacking Learner",
+      "Designing the Future of Security at Paraditi Corp (Concept)",
+      "M.Tech InfoSec Student & Cybersecurity Enthusiast",
+      "Turning Vulnerabilities into Learning Opportunities",
+      "Zero Trust, All Passion — Cybersecurity Fresher",
     ],
     stats: {
       projects: 4,
-      certifications: 5,
+      certifications: 6,
       jobSimulations: 7,
       yearsStudying: 4,
     },
@@ -128,6 +128,14 @@ export const portfolioData = {
   ],
 
   certifications: [
+    {
+      name: "AWS Associate Certification",
+      issuer: "Craw Security",
+      date: "March 2026",
+      credentialId: "CRAWEN-68277110",
+      skills: ["Amazon Web Services (AWS)", "Cloud Computing", "Infrastructure Security", "Cloud Security"],
+      link: null,
+    },
     {
       name: "Penetration Testing & Security Analyst Certification",
       issuer: "Craw Security",
@@ -248,7 +256,7 @@ export const portfolioData = {
       id: "digital-shield",
       name: "Digital Shield v2.0",
       subtitle: "Zero-Trust Fraud Prevention for Digital Payments",
-      year: "2025",
+      year: "2026",
       category: "FinTech / Security",
       status: "Prototype",
       featured: true,
@@ -269,7 +277,7 @@ export const portfolioData = {
       id: "returnshield",
       name: "ReturnShield",
       subtitle: "AI-Powered Multi-Stage Return Fraud Protection",
-      year: "2025",
+      year: "2026",
       category: "FinTech / AI",
       status: "Prototype",
       featured: true,
@@ -290,7 +298,7 @@ export const portfolioData = {
       id: "autoca",
       name: "AutoCA 4.0",
       subtitle: "Sovereign AI Intelligence Platform for Finance",
-      year: "2025",
+      year: "2026",
       category: "FinTech / AI",
       status: "Prototype",
       featured: false,
@@ -311,10 +319,10 @@ export const portfolioData = {
 
   paraditi: {
     name: "Paraditi Corp",
-    tagline: "Building India's Next-Generation Digital Trust Infrastructure",
+    tagline: "A Vision for Future Digital Sovereignty (Startup Concept)",
     description:
-      "Paraditi Corp is a cybersecurity and fintech startup focused on building institutional-grade trust infrastructure for India's digital economy. Our products — Digital Shield, ReturnShield, and AutoCA — collectively address fraud, compliance, and financial transparency at scale.",
-    products: ["Digital Shield v2.0", "ReturnShield", "AutoCA 4.0"],
+      "Paraditi Corp is a conceptual framework for a future cybersecurity startup. It represents my vision for building an ecosystem of advanced security products designed to defend against modern fraud and cyber threats. While currently in the ideation phase, these projects demonstrate my approach to solving critical security challenges using AI, Blockchain, and Zero-Trust architectures.",
+    products: ["Digital Shield v2.0 (Concept)", "ReturnShield (Concept)", "AutoCA 4.0 (Concept)"],
   },
 };
 

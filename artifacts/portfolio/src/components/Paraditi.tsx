@@ -6,11 +6,10 @@ export function Paraditi() {
   const { data } = usePortfolioData();
 
   return (
-    <section id="paraditi" className="py-32 relative overflow-hidden">
+    <section id="paraditi" className="py-32 relative overflow-hidden bg-primary/5">
       {/* Immersive Background */}
-      <div className="absolute inset-0 bg-[#0a0e17]" />
-      <div className="absolute inset-0 cyber-grid opacity-30" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(ellipse_at_center,rgba(0,240,255,0.1),transparent_50%)]" />
+      <div className="absolute inset-0 cyber-grid opacity-20" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.05),transparent_70%)]" />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-20">
@@ -18,7 +17,7 @@ export function Paraditi() {
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="w-20 h-20 mx-auto bg-card border border-primary flex items-center justify-center rounded-2xl mb-8 shadow-[0_0_30px_rgba(0,240,255,0.3)] rotate-45"
+            className="w-20 h-20 mx-auto bg-card border border-primary/50 flex items-center justify-center rounded-2xl mb-8 shadow-lg rotate-45"
           >
             <Hexagon size={40} className="text-primary -rotate-45" />
           </motion.div>
@@ -37,7 +36,7 @@ export function Paraditi() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl md:text-2xl text-primary font-mono tracking-tight mb-8"
+            className="text-xl md:text-2xl text-primary font-mono tracking-tight mb-8 font-bold"
           >
             {data.paraditi.tagline}
           </motion.p>
@@ -59,9 +58,9 @@ export function Paraditi() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="bg-card/50 backdrop-blur-sm border border-primary/30 p-8 rounded-xl text-center group hover:bg-primary/5 transition-colors"
+            className="bg-card border border-primary/10 p-8 rounded-xl text-center group hover:border-primary/40 hover:shadow-xl transition-all duration-300"
           >
-            <div className="w-16 h-16 mx-auto bg-background rounded-full flex items-center justify-center border border-primary/50 text-primary mb-6 group-hover:scale-110 transition-transform">
+            <div className="w-16 h-16 mx-auto bg-primary/5 rounded-full flex items-center justify-center border border-primary/20 text-primary mb-6 group-hover:scale-110 transition-transform">
               <Network size={28} />
             </div>
             <h3 className="text-xl font-bold text-foreground mb-3">{data.paraditi.products[0]}</h3>
@@ -73,9 +72,9 @@ export function Paraditi() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="bg-card/50 backdrop-blur-sm border border-primary/30 p-8 rounded-xl text-center group hover:bg-primary/5 transition-colors"
+            className="bg-card border border-primary/10 p-8 rounded-xl text-center group hover:border-primary/40 hover:shadow-xl transition-all duration-300"
           >
-            <div className="w-16 h-16 mx-auto bg-background rounded-full flex items-center justify-center border border-primary/50 text-primary mb-6 group-hover:scale-110 transition-transform">
+            <div className="w-16 h-16 mx-auto bg-primary/5 rounded-full flex items-center justify-center border border-primary/20 text-primary mb-6 group-hover:scale-110 transition-transform">
               <Fingerprint size={28} />
             </div>
             <h3 className="text-xl font-bold text-foreground mb-3">{data.paraditi.products[1]}</h3>
@@ -87,9 +86,9 @@ export function Paraditi() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
-            className="bg-card/50 backdrop-blur-sm border border-primary/30 p-8 rounded-xl text-center group hover:bg-primary/5 transition-colors"
+            className="bg-card border border-primary/10 p-8 rounded-xl text-center group hover:border-primary/40 hover:shadow-xl transition-all duration-300"
           >
-            <div className="w-16 h-16 mx-auto bg-background rounded-full flex items-center justify-center border border-primary/50 text-primary mb-6 group-hover:scale-110 transition-transform">
+            <div className="w-16 h-16 mx-auto bg-primary/5 rounded-full flex items-center justify-center border border-primary/20 text-primary mb-6 group-hover:scale-110 transition-transform">
               <Zap size={28} />
             </div>
             <h3 className="text-xl font-bold text-foreground mb-3">{data.paraditi.products[2]}</h3>

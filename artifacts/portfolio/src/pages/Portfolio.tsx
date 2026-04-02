@@ -19,13 +19,13 @@ export default function Portfolio() {
       <main>
         <Hero />
         <About />
+        <Education />
         <Skills />
         <Experience />
         <Projects />
         <Paraditi />
         <Certifications />
         <JobSimulations />
-        <Education />
         <Contact />
       </main>
       <Footer />

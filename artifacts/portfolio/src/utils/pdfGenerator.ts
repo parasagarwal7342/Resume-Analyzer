@@ -2,6 +2,16 @@ import { PortfolioData } from "../data/portfolioData";
 import { jsPDF } from "jspdf";
 
 export const generateResume = (data: PortfolioData) => {
+  // Sanitize data to replace non-standard characters like ₹ which are not supported by standard PDF fonts
+  // Also clean up any potential weird whitespace characters
+  const sanitize = (text: string) => {
+    if (!text) return "";
+    return text
+      .replace(/₹/g, "Rs. ")
+      .replace(/\u00A0/g, " ") // Replace non-breaking spaces
+      .trim();
+  };
+
   const doc = new jsPDF({
     orientation: "portrait",
     unit: "mm",
@@ -9,125 +19,178 @@ export const generateResume = (data: PortfolioData) => {
   });
 
   const pageWidth = doc.internal.pageSize.getWidth();
-  let y = 20;
+  const pageHeight = doc.internal.pageSize.getHeight();
+  const margin = 15;
+  const contentWidth = pageWidth - (margin * 2);
+  let y = 15;
 
-  // Header
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(24);
-  doc.setTextColor(10, 14, 23); // Dark
-  doc.text(data.personal.name.toUpperCase(), 20, y);
-  
-  y += 8;
-  doc.setFont("helvetica", "normal");
-  doc.setFontSize(11);
-  doc.setTextColor(100, 100, 100);
-  doc.text(`${data.personal.location} | ${data.personal.phone} | ${data.personal.email}`, 20, y);
-  y += 5;
-  doc.text(`${data.personal.linkedin} | ${data.personal.github}`, 20, y);
+  // Helper for Section Headers
+  const addSectionHeader = (title: string) => {
+    if (y > pageHeight - 30) {
+      doc.addPage();
+      y = 15;
+    }
+    y += 5;
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(12);
+    doc.setTextColor(0, 0, 0);
+    doc.text(title.toUpperCase(), margin, y);
+    y += 1.5;
+    doc.setLineWidth(0.2);
+    doc.setDrawColor(180, 180, 180);
+    doc.line(margin, y, pageWidth - margin, y);
+    y += 5;
+  };
 
-  y += 12;
-  
-  // Summary
+  // Header - Centered
   doc.setFont("helvetica", "bold");
-  doc.setFontSize(14);
-  doc.setTextColor(10, 14, 23);
-  doc.text("PROFESSIONAL SUMMARY", 20, y);
-  y += 2;
-  doc.setLineWidth(0.5);
-  doc.setDrawColor(0, 240, 255); // Cyan line
-  doc.line(20, y, pageWidth - 20, y);
-  y += 6;
+  doc.setFontSize(22);
+  doc.setTextColor(0, 0, 0);
+  doc.text(sanitize(data.personal.name.toUpperCase()), pageWidth / 2, y, { align: "center" });
+  
+  y += 7;
   doc.setFont("helvetica", "normal");
   doc.setFontSize(10);
-  doc.setTextColor(50, 50, 50);
+  doc.setTextColor(60, 60, 60);
+  const contactInfo = sanitize(`${data.personal.location} | ${data.personal.phone} | ${data.personal.email}`);
+  doc.text(contactInfo, pageWidth / 2, y, { align: "center" });
   
-  const splitBio = doc.splitTextToSize(data.personal.bio, pageWidth - 40);
-  doc.text(splitBio, 20, y);
-  y += (splitBio.length * 5) + 8;
+  y += 5;
+  const links = sanitize(`${data.personal.linkedin.replace("https://", "")} | ${data.personal.github.replace("https://", "")}`);
+  doc.text(links, pageWidth / 2, y, { align: "center" });
 
-  // Experience
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(14);
-  doc.setTextColor(10, 14, 23);
-  doc.text("EXPERIENCE", 20, y);
-  y += 2;
-  doc.line(20, y, pageWidth - 20, y);
-  y += 6;
+  y += 10;
+  
+  // Professional Summary
+  addSectionHeader("Professional Summary");
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  doc.setTextColor(40, 40, 40);
+  const splitBio = doc.splitTextToSize(sanitize(data.personal.bio), contentWidth);
+  doc.text(splitBio, margin, y);
+  y += (splitBio.length * 5) + 4;
 
-  data.experience.forEach((exp) => {
+  // Education
+  addSectionHeader("Academic Credentials");
+  data.education.forEach((edu) => {
+    if (y > pageHeight - 20) { doc.addPage(); y = 15; }
     doc.setFont("helvetica", "bold");
-    doc.setFontSize(11);
-    doc.text(exp.role, 20, y);
-    doc.setFont("helvetica", "normal");
-    doc.text(`${exp.startDate} - ${exp.endDate}`, pageWidth - 20, y, { align: "right" });
-    y += 5;
-    doc.setFont("helvetica", "italic");
-    doc.text(exp.company, 20, y);
-    y += 5;
-    doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
+    doc.text(sanitize(edu.degree), margin, y);
+    doc.setFont("helvetica", "normal");
+    doc.text(sanitize(`${edu.startDate} - ${edu.endDate}`), pageWidth - margin, y, { align: "right" });
+    y += 4.5;
+    doc.text(sanitize(`${edu.institution} | ${edu.field}`), margin, y);
+    y += 6;
+  });
+
+  // Core Skills
+  addSectionHeader("Core Technical Skills");
+  const skillsByCategory: Record<string, string[]> = {};
+  data.skills.forEach(skill => {
+    if (!skillsByCategory[skill.category]) {
+      skillsByCategory[skill.category] = [];
+    }
+    skillsByCategory[skill.category].push(skill.name);
+  });
+
+  doc.setFontSize(10);
+  Object.entries(skillsByCategory).forEach(([category, skills]) => {
+    if (y > pageHeight - 15) { doc.addPage(); y = 15; }
+    doc.setFont("helvetica", "bold");
+    doc.text(sanitize(`${category}:`), margin, y);
+    doc.setFont("helvetica", "normal");
+    const skillList = skills.join(", ");
+    const splitSkills = doc.splitTextToSize(sanitize(skillList), contentWidth - 45);
+    doc.text(splitSkills, margin + 42, y);
+    y += (splitSkills.length * 5) + 1.5;
+  });
+
+  y += 4;
+
+  // Professional Experience
+  addSectionHeader("Professional Experience");
+  data.experience.forEach((exp) => {
+    if (y > pageHeight - 30) { doc.addPage(); y = 15; }
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(10.5);
+    doc.text(sanitize(exp.role), margin, y);
+    doc.setFont("helvetica", "normal");
+    doc.text(sanitize(`${exp.startDate} - ${exp.endDate}`), pageWidth - margin, y, { align: "right" });
+    y += 5;
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor(80, 80, 80);
+    doc.text(sanitize(exp.company), margin, y);
+    doc.setTextColor(0, 0, 0);
+    y += 5.5;
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(9.5);
     exp.achievements.forEach(ach => {
-      const splitAch = doc.splitTextToSize(`• ${ach}`, pageWidth - 45);
-      doc.text(splitAch, 25, y);
+      const splitAch = doc.splitTextToSize(sanitize(`• ${ach}`), contentWidth - 5);
+      if (y > pageHeight - 15) { doc.addPage(); y = 15; }
+      doc.text(splitAch, margin + 2, y);
       y += (splitAch.length * 5);
     });
     y += 4;
   });
 
-  y += 4;
-
-  // Projects
-  if (y > 250) { doc.addPage(); y = 20; }
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(14);
-  doc.setTextColor(10, 14, 23);
-  doc.text("PROJECTS & STARTUP (Paraditi Corp)", 20, y);
-  y += 2;
-  doc.line(20, y, pageWidth - 20, y);
-  y += 6;
-
+  // Projects & Entrepreneurship
+  addSectionHeader("Key Projects & Entrepreneurship (Paraditi Corp)");
   data.projects.forEach((proj) => {
-    if (y > 270) { doc.addPage(); y = 20; }
+    if (y > pageHeight - 40) { doc.addPage(); y = 15; }
     doc.setFont("helvetica", "bold");
-    doc.setFontSize(11);
-    const title = `${proj.name} ${proj.isParaditiCorp ? "(Paraditi Corp)" : ""}`;
-    doc.text(title, 20, y);
+    doc.setFontSize(10.5);
+    const title = sanitize(`${proj.name} ${proj.isParaditiCorp ? "| Paraditi Corp" : ""}`);
+    doc.text(title, margin, y);
     doc.setFont("helvetica", "normal");
-    doc.text(proj.year, pageWidth - 20, y, { align: "right" });
+    doc.text(sanitize(proj.year), pageWidth - margin, y, { align: "right" });
     y += 5;
     doc.setFont("helvetica", "italic");
-    doc.text(proj.subtitle, 20, y);
-    y += 5;
+    doc.setTextColor(80, 80, 80);
+    doc.text(sanitize(proj.subtitle), margin, y);
+    doc.setTextColor(0, 0, 0);
+    y += 5.5;
     doc.setFont("helvetica", "normal");
-    doc.setFontSize(10);
-    const splitDesc = doc.splitTextToSize(proj.description, pageWidth - 40);
-    doc.text(splitDesc, 20, y);
-    y += (splitDesc.length * 5) + 2;
-    doc.setFont("helvetica", "italic");
-    doc.text(`Tech: ${proj.techStack.join(", ")}`, 20, y);
-    y += 6;
+    doc.setFontSize(9.5);
+    const splitDesc = doc.splitTextToSize(sanitize(proj.description), contentWidth);
+    doc.text(splitDesc, margin, y);
+    y += (splitDesc.length * 5) + 3;
+    doc.setFont("helvetica", "bold");
+    doc.text("Technologies: ", margin, y);
+    doc.setFont("helvetica", "normal");
+    doc.text(sanitize(proj.techStack.join(", ")), margin + 25, y);
+    y += 8;
   });
 
-  // Education
-  if (y > 250) { doc.addPage(); y = 20; }
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(14);
-  doc.setTextColor(10, 14, 23);
-  doc.text("EDUCATION", 20, y);
-  y += 2;
-  doc.line(20, y, pageWidth - 20, y);
-  y += 6;
-
-  data.education.forEach((edu) => {
-    if (y > 280) { doc.addPage(); y = 20; }
+  // Certifications
+  addSectionHeader("Professional Certifications");
+  data.certifications.forEach((cert) => {
+    if (y > pageHeight - 15) { doc.addPage(); y = 15; }
     doc.setFont("helvetica", "bold");
-    doc.setFontSize(11);
-    doc.text(edu.degree, 20, y);
+    doc.setFontSize(10);
+    doc.text(sanitize(cert.name), margin, y);
     doc.setFont("helvetica", "normal");
-    doc.text(`${edu.startDate} - ${edu.endDate}`, pageWidth - 20, y, { align: "right" });
+    doc.text(sanitize(cert.date), pageWidth - margin, y, { align: "right" });
+    y += 4.5;
+    doc.setFontSize(9);
+    doc.text(sanitize(`${cert.issuer} | Credential ID: ${cert.credentialId}`), margin, y);
     y += 5;
-    doc.text(`${edu.institution} - ${edu.field}`, 20, y);
-    y += 6;
+  });
+
+  // Job Simulations
+  addSectionHeader("Virtual Work Experience (Forage)");
+  data.jobSimulations.forEach((sim) => {
+    if (y > pageHeight - 20) { doc.addPage(); y = 15; }
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(10);
+    doc.text(sanitize(`${sim.company} - ${sim.program}`), margin, y);
+    doc.setFont("helvetica", "normal");
+    doc.text(sanitize(sim.date), pageWidth - margin, y, { align: "right" });
+    y += 4.5;
+    doc.setFontSize(9);
+    const splitSimDesc = doc.splitTextToSize(sanitize(sim.description), contentWidth);
+    doc.text(splitSimDesc, margin, y);
+    y += (splitSimDesc.length * 4.5) + 2;
   });
 
   doc.save(`${data.personal.name.replace(" ", "_")}_Resume.pdf`);
