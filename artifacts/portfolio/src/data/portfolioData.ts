@@ -1,7 +1,7 @@
 export const portfolioData = {
   personal: {
     name: "Paras Agrawal",
-    initials: "PA",
+    initials: "PARAS",
     title: "Cybersecurity Professional & Startup Founder",
     tagline: "Defending the Digital Frontier — One Exploit at a Time",
     bio: "Dynamic cybersecurity professional with a B.Tech in Computer Science, currently pursuing M.Tech in Information Security at Netaji Subhas University of Technology, Delhi. I specialize in Penetration Testing, Ethical Hacking, IAM, VAPT, and Incident Response. Beyond security, I'm the founder of Paraditi Corp — building next-generation fintech and fraud prevention products that protect India's digital economy.",
