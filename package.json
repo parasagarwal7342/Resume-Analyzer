@@ -2,7 +2,7 @@
   "name": "workspace",
   "version": "0.0.0",
   "description": "AI-powered resume analysis with intelligent job matching capabilities.",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "scripts": {
     "build": "pnpm run typecheck && pnpm -r --if-present run build",
     "typecheck:libs": "tsc --build",

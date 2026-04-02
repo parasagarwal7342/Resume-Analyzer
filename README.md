@@ -8,7 +8,7 @@
  [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/) 
  [![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://netlify.com) 
  [![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com) 
- [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE) 
+ [![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-red?style=for-the-badge)](LICENSE) 
   
  <br/> 
   
@@ -232,7 +232,7 @@
   
  ## 📄 License 
   
- This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details. 
+ This project is under **All Rights Reserved** — see the [LICENSE](LICENSE) file for details. Unauthorized use is prohibited. 
   
  --- 
   
