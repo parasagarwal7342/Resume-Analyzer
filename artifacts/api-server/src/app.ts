@@ -34,7 +34,8 @@ const requireAdminPassword = (req: express.Request, res: express.Response, next:
     (req.body && typeof req.body.adminPassword === "string" ? req.body.adminPassword : undefined);
 
   if (providedPassword !== ADMIN_PASSWORD) {
-    return res.status(401).json({ error: "Unauthorized: invalid admin password" });
+    res.status(401).json({ error: "Unauthorized: invalid admin password" });
+    return;
   }
 
   next();
