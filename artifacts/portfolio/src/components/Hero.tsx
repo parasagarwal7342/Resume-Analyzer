@@ -8,6 +8,9 @@ export function Hero() {
   const { data } = usePortfolioData();
   const [roleIndex, setRoleIndex] = useState(0);
 
+  // Hidden check based on URL query parameter ?admin=true
+  const isAdmin = new URLSearchParams(window.location.search).get("admin") === "true";
+
   useEffect(() => {
     const interval = setInterval(() => {
       setRoleIndex((prev) => (prev + 1) % data.personal.roles.length);
@@ -83,24 +86,28 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-wrap items-center gap-4"
           >
-            <button
-              onClick={() => generateResume(data)}
-              className="group relative px-8 py-4 bg-primary text-primary-foreground font-mono font-bold uppercase tracking-wider overflow-hidden rounded-sm"
-            >
-              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-              <span className="relative flex items-center gap-2">
-                <Download size={18} />
-                Download Resume
-              </span>
-            </button>
+            {isAdmin && (
+              <>
+                <button
+                  onClick={() => generateResume(data)}
+                  className="group relative px-8 py-4 bg-primary text-primary-foreground font-mono font-bold uppercase tracking-wider overflow-hidden rounded-sm"
+                >
+                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+                  <span className="relative flex items-center gap-2">
+                    <Download size={18} />
+                    Download Resume
+                  </span>
+                </button>
 
-            <button
-              onClick={() => generateCoverLetter(data)}
-              className="px-8 py-4 border border-primary/50 text-primary font-mono font-bold uppercase tracking-wider hover:bg-primary/10 transition-colors rounded-sm flex items-center gap-2"
-            >
-              <Download size={18} />
-              Cover Letter
-            </button>
+                <button
+                  onClick={() => generateCoverLetter(data)}
+                  className="px-8 py-4 border border-primary/50 text-primary font-mono font-bold uppercase tracking-wider hover:bg-primary/10 transition-colors rounded-sm flex items-center gap-2"
+                >
+                  <Download size={18} />
+                  Cover Letter
+                </button>
+              </>
+            )}
 
             <a
               href="#projects"

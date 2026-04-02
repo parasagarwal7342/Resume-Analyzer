@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Menu, X, Terminal } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [location] = useLocation();
+
+  // Simple hidden check based on URL query parameter ?admin=true
+  const isAdmin = new URLSearchParams(window.location.search).get("admin") === "true";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,12 +57,14 @@ export function Navbar() {
               {link.name}
             </a>
           ))}
-          <Link
-            href="/admin"
-            className="text-xs font-mono text-muted-foreground/50 hover:text-primary transition-colors"
-          >
-            [ADMIN]
-          </Link>
+          {isAdmin && (
+            <Link
+              href="/admin"
+              className="text-xs font-mono text-muted-foreground/50 hover:text-primary transition-colors"
+            >
+              [ADMIN]
+            </Link>
+          )}
         </nav>
 
         {/* Mobile Toggle */}
@@ -90,13 +96,15 @@ export function Navbar() {
                   {link.name}
                 </a>
               ))}
-              <Link
-                href="/admin"
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-xs font-mono text-muted-foreground/50 hover:text-primary py-2"
-              >
-                [ADMIN]
-              </Link>
+              {isAdmin && (
+                <Link
+                  href="/admin"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-xs font-mono text-muted-foreground/50 hover:text-primary py-2"
+                >
+                  [ADMIN]
+                </Link>
+              )}
             </div>
           </motion.div>
         )}
