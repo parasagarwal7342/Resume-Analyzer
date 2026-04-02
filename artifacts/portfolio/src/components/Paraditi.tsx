@@ -101,6 +101,23 @@ export function Paraditi() {
              View full product specifications <Zap size={16} />
            </a>
         </div>
+
+        {/* Legal Notice */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6 }}
+          className="mt-16 pt-8 border-t border-primary/10 max-w-3xl mx-auto"
+        >
+          <div className="flex items-center justify-center gap-2 text-primary/60 mb-3">
+            <Fingerprint size={14} />
+            <span className="text-[10px] font-mono uppercase tracking-[0.2em]">Intellectual Property Protection</span>
+          </div>
+          <p className="text-[11px] font-mono text-muted-foreground/60 leading-relaxed uppercase tracking-widest text-center px-4">
+            Legal Notice: Except for Sahaj, all original ideas, architectural frameworks, and proprietary algorithms of Paraditi Corp are strictly Patented and Copyrighted © 2026. Any unauthorized reproduction, adaptation, or distribution will be met with immediate legal action.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
