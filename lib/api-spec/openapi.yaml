@@ -3,13 +3,15 @@ info:
   # Do not change the title, if the title changes, the import paths will be broken
   title: Api
   version: 0.1.0
-  description: API specification
+  description: Advanced Resume Parser API
 servers:
   - url: /api
     description: Base API path
 tags:
   - name: health
     description: Health operations
+  - name: resumes
+    description: Resume parsing and management
 paths:
   /healthz:
     get:
@@ -24,6 +26,144 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+
+  /resumes:
+    get:
+      operationId: listResumes
+      tags: [resumes]
+      summary: List all parsed resumes
+      parameters:
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 20
+        - name: offset
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 0
+      responses:
+        "200":
+          description: List of resumes
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResumeListResponse"
+
+  /resumes/parse:
+    post:
+      operationId: parseResume
+      tags: [resumes]
+      summary: Parse a resume from text content
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ParseResumeBody"
+      responses:
+        "200":
+          description: Parsed resume data
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Resume"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /resumes/stats:
+    get:
+      operationId: getResumeStats
+      tags: [resumes]
+      summary: Get aggregate stats across all parsed resumes
+      responses:
+        "200":
+          description: Stats summary
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResumeStats"
+
+  /resumes/{id}:
+    get:
+      operationId: getResume
+      tags: [resumes]
+      summary: Get a specific resume by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Resume details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Resume"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+    delete:
+      operationId: deleteResume
+      tags: [resumes]
+      summary: Delete a resume by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Deleted successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SuccessResponse"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /resumes/{id}/match:
+    post:
+      operationId: matchResumeToJob
+      tags: [resumes]
+      summary: Match a resume against a job description
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/JobMatchBody"
+      responses:
+        "200":
+          description: Match analysis result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JobMatchResult"
+
 components:
   schemas:
     HealthStatus:
@@ -34,3 +174,295 @@ components:
       required:
         - status
 
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+      required:
+        - error
+
+    SuccessResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+      required:
+        - success
+
+    ParseResumeBody:
+      type: object
+      properties:
+        text:
+          type: string
+          description: Raw resume text content
+        fileName:
+          type: string
+          description: Original file name (optional)
+      required:
+        - text
+
+    JobMatchBody:
+      type: object
+      properties:
+        jobDescription:
+          type: string
+          description: Job description text to match against
+      required:
+        - jobDescription
+
+    ContactInfo:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        location:
+          type: string
+        linkedin:
+          type: string
+        github:
+          type: string
+        website:
+          type: string
+
+    WorkExperience:
+      type: object
+      properties:
+        company:
+          type: string
+        title:
+          type: string
+        startDate:
+          type: string
+        endDate:
+          type: string
+        current:
+          type: boolean
+        description:
+          type: string
+        achievements:
+          type: array
+          items:
+            type: string
+      required:
+        - company
+        - title
+
+    Education:
+      type: object
+      properties:
+        institution:
+          type: string
+        degree:
+          type: string
+        field:
+          type: string
+        startDate:
+          type: string
+        endDate:
+          type: string
+        gpa:
+          type: string
+      required:
+        - institution
+        - degree
+
+    Skill:
+      type: object
+      properties:
+        name:
+          type: string
+        category:
+          type: string
+          enum: [technical, soft, language, tool, framework, other]
+        level:
+          type: string
+          enum: [beginner, intermediate, advanced, expert]
+      required:
+        - name
+        - category
+
+    Project:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        technologies:
+          type: array
+          items:
+            type: string
+        url:
+          type: string
+      required:
+        - name
+
+    Certification:
+      type: object
+      properties:
+        name:
+          type: string
+        issuer:
+          type: string
+        date:
+          type: string
+        url:
+          type: string
+      required:
+        - name
+
+    ParsedResumeData:
+      type: object
+      properties:
+        contact:
+          $ref: "#/components/schemas/ContactInfo"
+        summary:
+          type: string
+        experience:
+          type: array
+          items:
+            $ref: "#/components/schemas/WorkExperience"
+        education:
+          type: array
+          items:
+            $ref: "#/components/schemas/Education"
+        skills:
+          type: array
+          items:
+            $ref: "#/components/schemas/Skill"
+        projects:
+          type: array
+          items:
+            $ref: "#/components/schemas/Project"
+        certifications:
+          type: array
+          items:
+            $ref: "#/components/schemas/Certification"
+        languages:
+          type: array
+          items:
+            type: string
+        totalYearsExperience:
+          type: number
+        seniorityLevel:
+          type: string
+          enum: [entry, junior, mid, senior, lead, executive]
+
+    Resume:
+      type: object
+      properties:
+        id:
+          type: integer
+        fileName:
+          type: string
+        rawText:
+          type: string
+        parsedData:
+          $ref: "#/components/schemas/ParsedResumeData"
+        createdAt:
+          type: string
+      required:
+        - id
+        - rawText
+        - parsedData
+        - createdAt
+
+    ResumeListResponse:
+      type: object
+      properties:
+        resumes:
+          type: array
+          items:
+            $ref: "#/components/schemas/Resume"
+        total:
+          type: integer
+      required:
+        - resumes
+        - total
+
+    ResumeStats:
+      type: object
+      properties:
+        totalResumes:
+          type: integer
+        topSkills:
+          type: array
+          items:
+            type: object
+            properties:
+              skill:
+                type: string
+              count:
+                type: integer
+            required:
+              - skill
+              - count
+        seniorityBreakdown:
+          type: object
+          additionalProperties:
+            type: integer
+        avgYearsExperience:
+          type: number
+        topLocations:
+          type: array
+          items:
+            type: object
+            properties:
+              location:
+                type: string
+              count:
+                type: integer
+            required:
+              - location
+              - count
+      required:
+        - totalResumes
+        - topSkills
+        - seniorityBreakdown
+        - avgYearsExperience
+        - topLocations
+
+    JobMatchResult:
+      type: object
+      properties:
+        matchScore:
+          type: number
+          description: Overall match score 0-100
+        skillsMatch:
+          type: array
+          items:
+            type: object
+            properties:
+              skill:
+                type: string
+              matched:
+                type: boolean
+            required:
+              - skill
+              - matched
+        missingSkills:
+          type: array
+          items:
+            type: string
+        strengths:
+          type: array
+          items:
+            type: string
+        gaps:
+          type: array
+          items:
+            type: string
+        recommendation:
+          type: string
+      required:
+        - matchScore
+        - skillsMatch
+        - missingSkills
+        - strengths
+        - gaps
+        - recommendation
