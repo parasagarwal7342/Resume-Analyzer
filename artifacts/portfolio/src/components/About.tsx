@@ -36,9 +36,18 @@ export function About() {
               transition={{ delay: 0.1 }}
               className="prose max-w-none"
             >
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                 {data.personal.bio}
               </p>
+
+              <div className="flex flex-wrap gap-4 mt-6">
+                {data.personal.languages?.map((lang) => (
+                  <div key={lang} className="flex items-center gap-2 px-4 py-2 bg-primary/5 border border-primary/20 rounded-sm font-mono text-xs uppercase tracking-widest text-primary">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                    {lang}
+                  </div>
+                ))}
+              </div>
             </motion.div>
           </div>
 

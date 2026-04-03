@@ -2,11 +2,11 @@ export const portfolioData = {
   personal: {
     name: "PARAS AGRAWAL",
     initials: "PARAS",
-    title: "Cybersecurity Enthusiast & Fresher",
+    title: "Cybersecurity Analyst | Penetration Tester | VAPT Expert",
     tagline:
-      "Aspiring Cybersecurity Professional and Fresher, currently pursuing M.Tech in Information Security. Passionate about identifying vulnerabilities and building secure digital ecosystems. Architecting the vision for Paraditi Corp.",
+      "Penetration Tester | VAPT | Ethical Hacking | Python Expert | M.Tech Information Security Professional",
     bio:
-      "A motivated Cybersecurity Fresher with a B.Tech in Computer Science and currently pursuing M.Tech in Information Security at Netaji Subhas University of Technology, Delhi. I specialize in the fundamentals of Penetration Testing, Ethical Hacking, VAPT, and Incident Response. As a fresher, I am eager to apply my academic knowledge and certifications to real-world challenges. Beyond my studies, I am the visionary behind Paraditi Corp — a concept for a future startup where I am designing ideas for next-generation security and fraud prevention products to protect India's digital economy.",
+      "Dynamic cybersecurity professional with B.Tech in Computer Science, pursuing M.Tech in Information Security. Expertise in Penetration Testing, Ethical Hacking, Identity and Access Management (IAM), Vulnerability Assessment and Penetration Testing (VAPT), threat analysis, and incident response. Hands-on experience through industry simulations with Tata, Verizon, MasterCard, and Deloitte. Certified in Penetration Testing, Ethical Hacking, Networking, Python, and Linux by Craw Security. Strong proficiency in Python, Linux, and network security to safeguard organizational assets. Beyond my studies, I am the visionary behind Paraditi Corp — a concept for a future startup where I am designing ideas for next-generation security and fraud prevention products.",
     location: "New Delhi, India — 110081",
     email: "parasagarwal7342@gmail.com",
     phone: "+91 8587897399",
@@ -14,17 +14,19 @@ export const portfolioData = {
     github: "https://github.com/parasagarwal7342",
     availableForWork: true,
     roles: [
-      "Cybersecurity Aspirant",
-      "Pentesting Enthusiast",
+      "Penetration Tester",
+      "VAPT Specialist",
+      "Ethical Hacker",
+      "Python Security Developer",
       "Paraditi Corp Visionary",
-      "CEH Certified Learner",
+      "Cybersecurity Analyst",
     ],
     taglines: [
-      "Aspiring Cybersecurity Professional | Ethical Hacking Learner",
-      "Designing the Future of Security at Paraditi Corp (Concept)",
-      "M.Tech InfoSec Student & Cybersecurity Enthusiast",
-      "Turning Vulnerabilities into Learning Opportunities",
-      "Zero Trust, All Passion — Cybersecurity Fresher",
+      "Cybersecurity Infrastructure Specialist | Network Security",
+      "Designing the Future of Security at Paraditi Corp",
+      "M.Tech InfoSec Professional | VAPT & Penetration Testing",
+      "Secure Digital Ecosystem Architect",
+      "Zero Trust Strategy & Deployment — Cybersecurity Professional",
     ],
     stats: {
       projects: 4,
@@ -32,6 +34,7 @@ export const portfolioData = {
       jobSimulations: 7,
       yearsStudying: 4,
     },
+    languages: ["English", "Hindi"],
   },
 
   skills: [
@@ -53,6 +56,7 @@ export const portfolioData = {
     { name: "Firewall Configuration", category: "Networking", level: 80 },
     { name: "VPN Security", category: "Networking", level: 78 },
     { name: "Network Topology", category: "Networking", level: 82 },
+    { name: "Network Devices", category: "Networking", level: 84 },
     // Technical / Dev
     { name: "Python", category: "Technical", level: 83 },
     { name: "Linux", category: "Technical", level: 88 },
@@ -60,6 +64,7 @@ export const portfolioData = {
     { name: "SpringBoot", category: "Technical", level: 70 },
     { name: "MySQL", category: "Technical", level: 72 },
     { name: "Data Analysis", category: "Technical", level: 75 },
+    { name: "Security Tools", category: "Technical", level: 85 },
     // Professional
     { name: "Critical Thinking", category: "Professional", level: 90 },
     { name: "Problem Solving", category: "Professional", level: 88 },
