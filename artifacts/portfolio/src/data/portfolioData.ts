@@ -4,9 +4,9 @@ export const portfolioData = {
     initials: "PARAS",
     title: "Cybersecurity Analyst | Penetration Tester | VAPT Expert",
     tagline:
-      "Penetration Tester | VAPT | Ethical Hacking | Python Expert | M.Tech Information Security Professional",
+      "Expertise in Penetration Testing, VAPT, and Ethical Hacking. Pursuing M.Tech in Information Security and Architecting the Future of Digital Sovereignty at Paraditi Corp.",
     bio:
-      "Dynamic cybersecurity professional with B.Tech in Computer Science, pursuing M.Tech in Information Security. Expertise in Penetration Testing, Ethical Hacking, Identity and Access Management (IAM), Vulnerability Assessment and Penetration Testing (VAPT), threat analysis, and incident response. Hands-on experience through industry simulations with Tata, Verizon, MasterCard, and Deloitte. Certified in Penetration Testing, Ethical Hacking, Networking, Python, and Linux by Craw Security. Strong proficiency in Python, Linux, and network security to safeguard organizational assets. Beyond my studies, I am the visionary behind Paraditi Corp — a concept for a future startup where I am designing ideas for next-generation security and fraud prevention products.",
+      "Dedicated Cybersecurity Specialist with a strong foundation in B.Tech Computer Science and currently advancing expertise through an M.Tech in Information Security. My focus lies in architecting resilient digital infrastructures through advanced Penetration Testing, VAPT, and Ethical Hacking methodologies. Beyond technical execution, I am the visionary behind Paraditi Corp — a conceptual startup framework designed to engineer next-generation defensive systems against evolving fraud and cyber-threats. My approach integrates a Zero-Trust philosophy with proactive incident response, ensuring that integrity and security are core architectural principles of the modern digital economy.",
     location: "New Delhi, India — 110081",
     email: "parasagarwal7342@gmail.com",
     phone: "+91 8587897399",
