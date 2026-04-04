@@ -320,6 +320,48 @@ export const portfolioData = {
       github: null,
       demo: null,
     },
+    {
+      id: "hexguard",
+      name: "HexGuard FIM",
+      subtitle: "Enterprise-Grade File Integrity Monitor",
+      year: "2026",
+      category: "Cybersecurity / Low-Level",
+      status: "MVP Completed",
+      featured: true,
+      isParaditiCorp: true,
+      description:
+        "Week 1 Project: High-performance File Integrity Monitor utilizing deep system-level tracking to detect and neutralize zero-day ransomware patterns. Kernel-level syscall event tracing coupled with AI threat analytics. Built under Paraditi Corp.",
+      techStack: ["Python", "PowerShell", "Kernel-level Tracing", "Ransomware Analytics", "SHA-256 Crypto"],
+      highlights: [
+        "Real-time file tampering detection securing zero-day vulnerabilities",
+        "Integrated AI analytics for lateral movement tracking",
+        "Robust cryptographic anchoring utilizing SHA-256",
+        "Patent pending algorithms via PARADITI CORP",
+      ],
+      github: "https://github.com/parasagarwal7342/security-hexguard-fim-w1",
+      demo: null,
+    },
+    {
+      id: "sentinel-ai",
+      name: "Sentinel-AI",
+      subtitle: "Sovereign Email Intelligence & Fraud Forensics",
+      year: "2026",
+      category: "Cybersecurity / Machine Learning",
+      status: "Deployed",
+      featured: true,
+      isParaditiCorp: true,
+      description:
+        "Week 2 Project: An uncopiable, IP-hardened email fraud detection framework. Uses a four-layer Sovereign Logic Fusion (SLF) consisting of Structural Integrity Audit (SFA), DNA Pattern matching, Machine Learning Ensemble, and Explainable AI (XAI) analysis to flag threats based on Non-Linear Manipulation Entropy. Built under Paraditi Corp.",
+      techStack: ["Python", "Flask", "XGBoost", "NLTK", "Scikit", "Cyber-Dark UI", "AOB v3.0"],
+      highlights: [
+        "Adversarial Obfuscation Buster (AOB v3.0) detects invisible zero-width unicode characters",
+        "Non-Linear Manipulation Entropy (NLME) to quantify urgency and greed triggers via XAI",
+        "Structural Forensic Audit (SFA) providing an uncopiable algorithmic defense layer",
+        "Officially fully filed under [Patent Pending: PARADITI CORP]",
+      ],
+      github: "https://github.com/parasagarwal7342/ai-spam-detector-w2",
+      demo: "http://localhost:5000",
+    },
   ],
 
   paraditi: {
@@ -327,7 +369,7 @@ export const portfolioData = {
     tagline: "A Vision for Future Digital Sovereignty (Startup Concept)",
     description:
       "Paraditi Corp is a conceptual framework for a future cybersecurity startup. It represents my vision for building an ecosystem of advanced security products designed to defend against modern fraud and cyber threats. While currently in the ideation phase, these projects demonstrate my approach to solving critical security challenges using AI, Blockchain, and Zero-Trust architectures.",
-    products: ["Digital Shield v2.0 (Concept)", "ReturnShield (Concept)", "AutoCA 4.0 (Concept)"],
+    products: ["Digital Shield v2.0 (Concept)", "ReturnShield (Concept)", "AutoCA 4.0 (Concept)", "HexGuard FIM (Active)", "Sentinel-AI (Active)"],
   },
 };
 
