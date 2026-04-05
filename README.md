@@ -14,8 +14,10 @@
   
  > **Parse smarter. Match better. Land the job.**   
  > An AI-powered resume analyzer that extracts insights, scores job compatibility, and helps you stand out. 
+ > 
+ > **Status**: Actively Maintained & Updated (2026)
   
- <br/> 
+ <br>
   
  [🚀 Live Demo](#demo) · [📖 Documentation](#docs) · [🐛 Report Bug](../../issues) · [✨ Request Feature](../../issues) 
   
