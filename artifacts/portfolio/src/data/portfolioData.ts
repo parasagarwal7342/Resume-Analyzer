@@ -237,6 +237,27 @@ export const portfolioData = {
 
   projects: [
     {
+      id: "spa-enterprise",
+      name: "SPA Enterprise Platform",
+      subtitle: "Multi-Portal E-Commerce Ecosystem",
+      year: "2026",
+      category: "Full Stack / AI",
+      status: "Deployed",
+      featured: true,
+      isParaditiCorp: false,
+      description:
+        "A highly functional multi-portal e-commerce ecosystem featuring dedicated live portals for Customers, Staff, and Executives. Includes a secure Razorpay checkout pipeline, an AI Auto-Post node powered by Anthropic Claude 3.5 and DALL-E 3, and a decentralized backend hosted on Railway.",
+      techStack: ["React", "Vite", "Node.js", "Railway", "Vercel", "Claude 3.5", "Razorpay"],
+      highlights: [
+        "Triple-Portal Architecture: Customer, Staff array, and Executive analytics dashboard",
+        "AI Auto-Post Node for intelligent, automated social media generation",
+        "Mandatory secure Client Authentication flows mapped to Razorpay checkout",
+        "Live deployment with dynamic Tier-Based Shipping calculations",
+      ],
+      github: "https://github.com/parasagarwal7342/SPA-ENTERPRISES",
+      demo: "https://spaenterprise.in",
+    },
+    {
       id: "sahaj",
       name: "Sahaj",
       subtitle: "AI-Powered Government Scheme Gateway",
