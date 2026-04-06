@@ -298,12 +298,12 @@ export const portfolioData = {
       category: "Enterprise / Web",
       status: "Deployed",
       featured: true,
-      isParaditiCorp: false,
+      isParaditiCorp: true,
       description:
-        "Production-ready e-commerce solution with dynamic regional shipping logic and multi-tier authentication for global business operations.",
+        "A mission-critical multi-portal e-commerce ecosystem engineered and commercially deployed by Paraditi Corp for SPA Enterprises. Features dedicated live portals for Customers, Staff, and Executives with AI-driven inventory nodes and high-fidelity branding.",
       techStack: ["React", "TypeScript", "Node.js", "Railway", "Vercel"],
       highlights: [
-        "Multi-portal ecosystem for Customers, Staff, and Executives",
+        "Architected as a Paraditi Corp white-label solution for enterprise retail",
         "AI Auto-Post nodes powered by Anthropic Claude 3.5 & DALL-E 3",
         "Decentralized backend hosted on Railway with Razorpay integration",
       ],
