@@ -30,8 +30,8 @@ export const portfolioData = {
     stats: {
       projects: 10,
       certifications: 12,
-      academicHonors: "M.Tech Scholar",
-      nodalPointsSecured: "14.4M+",
+      jobSimulations: "7+",
+      yearsStudying: "5+",
     },
     languages: ["English", "Hindi"],
   },
