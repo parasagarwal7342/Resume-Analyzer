@@ -133,7 +133,7 @@ export const portfolioData = {
 
   certifications: [
     {
-      name: "Senior Security Analyst Profile",
+      name: "Senior VAPT Analyst (Advanced)",
       issuer: "Strategic Accreditors",
       date: "2026",
       credentialId: "ADV-99221",
@@ -158,23 +158,33 @@ export const portfolioData = {
     },
   ],
 
+  jobSimulations: [
+    {
+      company: "Strategic Labs",
+      program: "Sovereign AI Infrastructure Virtual Experience",
+      date: "2026",
+      platform: "Executive Lab",
+      description: "Designed core behavioral models for next-generation digital sovereignty.",
+    },
+  ],
+
   projects: [
     {
       id: "sahaj",
-      name: "Sahaj",
-      subtitle: "AI-Powered Government Scheme Gateway",
+      name: "P Λ R Λ D I T I (Sahaj)",
+      subtitle: "AI-Native Economic Mobility Platform",
       year: "2026",
-      category: "AI / Web",
-      status: "Developed",
+      category: "AI / GovTech",
+      status: "Production Ready",
       featured: true,
       isParaditiCorp: false,
       description:
-        "An AI/ML enterprise gateway recommending government schemes with 98% accuracy. Built with a hardened SpringBoot + MySQL backend featuring AES-256 encryption at rest and Argon2 state-of-the-art hashing.",
-      techStack: ["SpringBoot", "MySQL", "NLP Models", "Argon2", "React 18"],
+        "An AI-Native platform that acts as an intelligent agent to guarantee scheme discovery and guidance for 800M+ citizens. Built with voice-first intent discovery in regional dialects.",
+      techStack: ["Python 3.12", "Flask", "NLP", "all-MiniLM-L6-v2", "PostgreSQL"],
       highlights: [
-        "Hardened security posture with SQLi protection and immutable logging",
-        "NLP-driven intent discovery for multi-dialect recognition",
-        "High-performance state management for real-time recommendations",
+        "Aditi AI & Dialect Mapper for multi-lingual intent discovery",
+        "Self-healing retrieval mesh with active-active fallback",
+        "Programmable benefit tokenizer linked to e-RUPI",
       ],
       github: null,
       demo: null,
@@ -185,16 +195,16 @@ export const portfolioData = {
       subtitle: "Zero-Trust Fraud Prevention",
       year: "2026",
       category: "FinTech / Security",
-      status: "Production Ready",
+      status: "Proprietary",
       featured: true,
       isParaditiCorp: true,
       description:
-        "The flagship Paraditi security OS. Intercepts transaction artifacts at the network edge, utilizing a proprietary UBS Engine to neutralize fraud in <14ms. Patent-protected infrastructure securing 14.4M+ endpoints.",
-      techStack: ["Edge AI", "Behavioral Fingerprinting", "Polygon Blockchain", "Rust Engine"],
+        "The flagship Paraditi security OS. Intercepts transaction artifacts at the network edge, utilizing a proprietary UBS Engine to neutralize fraud in <14ms.",
+      techStack: ["Edge AI", "Polygon Blockchain", "Rust", "Android Capacitor"],
       highlights: [
-        "14ms Latency - undetectable interference for bad actors",
-        "Securing 14.4M+ nodal points globally",
-        "8 Core Patents covering behavioral mapping and edge artifacts",
+        "UBS Engine processing transactions across 14.4M nodal points",
+        "Zero-latency behavioral fingerprinting",
+        "8 Core Patents pending in behavioral mapping",
       ],
       github: null,
       demo: null,
