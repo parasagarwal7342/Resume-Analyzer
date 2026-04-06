@@ -76,7 +76,7 @@ export const portfolioData = {
     {
       company: "Paraditi Corp",
       role: "Visionary Founder & Lead Architect",
-      startDate: "2024",
+      startDate: "2026",
       endDate: "Present",
       current: true,
       description: "Developing a suite of sovereign digital defense platforms focused on next-generation fraud prevention and AI-native security.",
