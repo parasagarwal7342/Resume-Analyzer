@@ -290,7 +290,7 @@ export const portfolioData = {
       year: "2026",
       category: "AI / Supply Chain",
       status: "Beta",
-      featured: false,
+      featured: true,
       isParaditiCorp: true,
       description:
         "Protecting MSME sellers from return fraud via blockchain-anchored video hashes and OpenCV verification.",
@@ -307,7 +307,7 @@ export const portfolioData = {
       year: "2026",
       category: "AI / FinTech",
       status: "Beta",
-      featured: false,
+      featured: true,
       isParaditiCorp: true,
       description:
         "Sovereign platform automating multi-portal financial compliance with Gemini-powered document extraction.",
@@ -324,7 +324,7 @@ export const portfolioData = {
       year: "2026",
       category: "ML / Security",
       status: "Deployed",
-      featured: false,
+      featured: true,
       isParaditiCorp: true,
       description:
         "IP-hardened email fraud detection framework using Sovereign Logic Fusion to flag high-entropy adversarial threats.",
@@ -341,7 +341,7 @@ export const portfolioData = {
       year: "2026",
       category: "Systems / Security",
       status: "Stable",
-      featured: false,
+      featured: true,
       isParaditiCorp: true,
       description:
         "Kernel-level tracing monitor detecting zero-day ransomware patterns and ensuring file system integrity.",
