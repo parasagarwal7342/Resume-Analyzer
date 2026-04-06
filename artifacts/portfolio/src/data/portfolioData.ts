@@ -274,7 +274,7 @@ export const portfolioData = {
       category: "AI / GovTech",
       status: "Stable",
       featured: true,
-      isParaditiCorp: false,
+      isParaditiCorp: true,
       description:
         "Intelligent agent ensuring scheme discovery and guidance for 800M+ citizens via voice-first intent recognition in regional dialects.",
       techStack: ["Python", "Flask", "NLP", "e-RUPI integration"],
