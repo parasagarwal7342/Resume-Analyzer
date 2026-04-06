@@ -4,7 +4,7 @@ export const portfolioData = {
     initials: "PARAS",
     title: "Senior Cybersecurity Architect | Systems Engineer | AI Strategist",
     tagline:
-      "18+ Years of Excellence in Cybersecurity Architecture, AI-Native Systems, and Digital Sovereignty. Founder at Paraditi Corp.",
+      "Cybersecurity Researcher & AI Systems Architect | Advancing Digital Sovereignty at Paraditi Corp | M.Tech Information Security (NSUT)",
     bio:
       "A dedicated Cybersecurity Specialist with a strong foundation in system architecture and emerging AI defense frameworks. Currently advancing technical leadership through an M.Tech in Information Security at NSUT, I am the visionary architect behind Paraditi Corp—a strategic framework engineered to secure the modern digital economy. My approach integrates a Zero-Trust philosophy with proactive incident response, drawing from nearly two decades of deep industry exposure and continuous academic excellence. I specialize in designing resilient digital infrastructures that neutralize evolving fraud and cyber-threats at the architectural level, ensuring integrity and security are core principles of the next-generation global marketplace.",
     location: "New Delhi, India — 110081",
