@@ -88,13 +88,13 @@ export const portfolioData = {
     },
     {
       company: "Melon Infotech OPC Pvt. Ltd.",
-      role: "Security Analyst",
-      startDate: "Apr 2025",
-      endDate: "Jun 2025",
+      role: "Security Analyst Intern",
+      startDate: "April 2025",
+      endDate: "June 2025",
       current: false,
-      description: "Ensuring database security integrity and 100% compliance with international data protection standards.",
+      description: "Worked as a Security Analyst Intern focusing on database security integrity and cybersecurity project collaboration.",
       achievements: [
-        "Maintained 100% compliance via hardened database security protocols",
+        "Maintained database security integrity, ensuring 100% compliance with data protection standards",
         "Participated in 5+ cybersecurity workshops, expanding hands-on knowledge in threat mitigation",
         "Supported incident response protocols and collaborated on 3+ security projects",
       ],
