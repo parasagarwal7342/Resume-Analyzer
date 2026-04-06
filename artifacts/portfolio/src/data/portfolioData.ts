@@ -2,11 +2,11 @@ export const portfolioData = {
   personal: {
     name: "PARAS AGRAWAL",
     initials: "PARAS",
-    title: "Cybersecurity Analyst | Systems Architect | AI Researcher",
+    title: "Cybersecurity Professional | Systems Architect | AI Researcher",
     tagline:
-      "Cybersecurity Researcher & AI Systems Architect | Advancing Digital Sovereignty at Paraditi Corp | M.Tech Information Security (NSUT)",
+      "Cybersecurity Professional currently pursuing M.Tech in Information Security. Passionate about identifying vulnerabilities and building secure digital ecosystems. Founder of Paraditi Corp.",
     bio:
-      "A motivated Cybersecurity Specialist with a B.Tech in Computer Science and currently pursuing an M.Tech in Information Security at Netaji Subhas University of Technology (NSUT), Delhi. I specialize in the fundamentals of Penetration Testing, Ethical Hacking, VAPT, and Incident Response. I am dedicated to applying advanced academic research and professional certifications to solve complex real-world digital security challenges. Beyond my studies, I am the founder of Paraditi Corp — where I lead the development of next-generation security and fraud prevention products designed to protect India's digital economy.",
+      "Cybersecurity Professional currently pursuing M.Tech in Information Security. Passionate about identifying vulnerabilities and building secure digital ecosystems. Founder of Paraditi Corp.",
     location: "New Delhi, India — 110081",
     email: "parasagarwal7342@gmail.com",
     phone: "+91 8587897399",
@@ -94,7 +94,7 @@ export const portfolioData = {
       current: false,
       description: "Ensuring database security integrity and 100% compliance with international data protection standards.",
       achievements: [
-        "Maintained 100% compliance via hardened database security protocols",
+        "Maintained database security integrity, ensuring 100% compliance with data protection standards",
         "Participated in 5+ cybersecurity workshops, expanding hands-on knowledge in threat mitigation",
         "Supported incident response protocols and collaborated on 3+ security projects",
       ],
