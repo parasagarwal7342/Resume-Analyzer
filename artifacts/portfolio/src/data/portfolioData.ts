@@ -6,7 +6,7 @@ export const portfolioData = {
     tagline:
       "Cybersecurity Professional currently pursuing M.Tech in Information Security. Passionate about identifying vulnerabilities and building secure digital ecosystems. Founder of Paraditi Corp.",
     bio:
-      "A motivated Cybersecurity Specialist with a B.Tech in Computer Science and currently pursuing an M.Tech in Information Security at Netaji Subhas University of Technology (NSUT), Delhi. I specialize in the fundamentals of Penetration Testing, Ethical Hacking, VAPT, and Incident Response. I am dedicated to applying advanced academic research and professional certifications to solve complex real-world digital security challenges. Beyond my studies, I am the founder of Paraditi Corp — where I lead the development of next-generation security and fraud prevention products designed to protect India's digital economy.",
+      "A motivated Cybersecurity Specialist with a B.Tech in Computer Science and currently pursuing an M.Tech in Information Security at Netaji Subhas University of Technology (NSUT), Delhi. I specialize in the fundamentals of Penetration Testing, Ethical Hacking, VAPT, and Incident Response. I am dedicated to applying advanced academic research and professional certifications to solve complex real-world digital security challenges. Beyond my studies, I am the founder of Paraditi Corp — where I lead the development and delivery of next-generation security and enterprise products, including mission-critical deployments for high-scale commerce ecosystems.",
     location: "New Delhi, India — 110081",
     email: "parasagarwal7342@gmail.com",
     phone: "+91 8587897399",
@@ -21,7 +21,7 @@ export const portfolioData = {
       "Security Analyst",
     ],
     taglines: [
-      "Cybersecurity Researcher | Advancing Digital Sovereignty",
+      "Cybersecurity Professional | Advancing Digital Sovereignty",
       "Founder @ Paraditi Corp",
       "M.Tech InfoSec (NSUT) | Expert VAPT & Red Teaming",
       "Zero Trust Infrastructure Architect",
@@ -79,11 +79,11 @@ export const portfolioData = {
       startDate: "2026",
       endDate: "Present",
       current: true,
-      description: "Developing a suite of sovereign digital defense platforms focused on next-generation fraud prevention and AI-native security.",
+      description: "Leading a mission-driven framework for Digital Sovereignty, engineering high-precision security and enterprise-grade enterprise-grade ecosystems.",
       achievements: [
-        "Architected Digital Shield v2.0, processing 14.4M+ transaction nodes with <14ms latency",
-        "Developing blockchain-anchored AI verification systems for retail supply chain immunity",
-        "Pioneering behavioral mapping logic to neutralize financial fraud at the network edge",
+        "Architected and successfully delivered the SPA Enterprise Platform, a mission-critical multi-portal ecosystem for global distribution",
+        "Engineering Digital Shield v2.0, processing 14.4M+ transaction nodes with <14ms latency",
+        "Pioneering autonomous behavioral mapping logic to neutralize financial fraud at the network edge",
       ],
     },
     {
