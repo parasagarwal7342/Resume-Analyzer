@@ -250,11 +250,11 @@ export const portfolioData = {
       featured: true,
       isParaditiCorp: false,
       description:
-        "Engineered an AI/ML web application utilizing the all-MiniLM-L6-v2 model to recommend relevant government schemes. Architected a secure SpringBoot and MySQL backend featuring Argon2 password hashing and comprehensive SQL injection prevention. Developed a responsive UI with planned phases for blockchain integration and cross-platform mobile deployment.",
-      techStack: ["SpringBoot", "MySQL", "Python", "all-MiniLM-L6-v2", "AI/ML", "Argon2", "React"],
+        "Architected a secure backend utilizing Spring Boot and MySQL, featuring Argon2 password hashing and comprehensive SQL injection prevention. Developed a responsive UI with planned phases for blockchain integration and cross-platform mobile deployment.",
+      techStack: ["Spring Boot", "MySQL", "Python", "all-MiniLM-L6-v2", "AI/ML", "Argon2", "React"],
       highlights: [
-        "Resolved 95% citizen unawareness of government schemes by engineering an AI-driven recommendation engine.",
-        "Secured backend infrastructure utilizing Argon2 hashing, achieving comprehensive SQL injection prevention.",
+        "Resolved 95% citizen unawareness regarding government schemes by engineering an AI-driven recommendation engine.",
+        "Secured backend infrastructure using Argon2 hashing and achieved comprehensive SQL injection prevention.",
         "Developed a highly responsive UI, optimizing the mobile-first user experience.",
         "Architected future phases to include blockchain integration and extensive mobile deployment.",
       ],
@@ -292,12 +292,12 @@ export const portfolioData = {
       featured: true,
       isParaditiCorp: true,
       description:
-        "A 3-tier AI + blockchain verification system protecting MSME sellers from return fraud on Amazon, Flipkart, and Meesho. Captures pre-shipment video, anchors to Polygon blockchain, and uses TensorFlow + OpenCV for doorstep and warehouse verification. Addresses ₹4,000 Cr annual return fraud epidemic. Built under Paraditi Corp.",
+        "A three-tier AI and blockchain verification system protecting MSME sellers from return fraud on major platforms. Captures pre-shipment video, anchors it to the Polygon blockchain, and utilizes TensorFlow and OpenCV for warehouse verification. Addresses the INR 4,000 Crore annual return fraud epidemic.",
       techStack: ["TensorFlow", "OpenCV", "Polygon Blockchain", "Python", "Node.js", "React", "Mobile SDK"],
       highlights: [
-        "Implemented a 3-tier chain of custody encompassing pre-shipment, doorstep pickup, and warehouse verification.",
+        "Implemented a three-tier chain of custody encompassing pre-shipment, doorstep pickup, and warehouse verification.",
         "Optimized seller scan time to 30 seconds utilizing Polygon-anchored, tamper-proof cryptographic hashes.",
-        "Mitigated ₹4,000 Crore in annual return fraud costs for Indian MSME sellers.",
+        "Mitigated INR 4,000 Crore in annual return fraud costs for Indian MSME sellers.",
         "Pioneered a patent-pending multi-stage triangulation methodology for advanced tampering detection.",
       ],
       github: null,
@@ -355,12 +355,12 @@ export const portfolioData = {
       featured: true,
       isParaditiCorp: true,
       description:
-        "Week 2 Project: An uncopiable, IP-hardened email fraud detection framework. Uses a four-layer Sovereign Logic Fusion (SLF) consisting of Structural Integrity Audit (SFA), DNA Pattern matching, Machine Learning Ensemble, and Explainable AI (XAI) analysis to flag threats based on SHAP-interpreted Non-Linear Manipulation Entropy. Built under Paraditi Corp.",
+        "An advanced, IP-hardened email fraud detection framework. Utilizes four-layer Sovereign Logic Fusion (SLF) consisting of Structural Integrity Audit (SFA), DNA matching, Machine Learning ensembles, and Explainable AI (XAI) to flag threats based on SHAP-interpreted Non-Linear Manipulation Entropy.",
       techStack: ["Python", "Flask", "XGBoost", "NLTK", "Scikit", "Cyber-Dark UI", "AOB v3.0"],
       highlights: [
-        "Engineered Adversarial Obfuscation Buster (AOB v3.0) to successfully detect invisible zero-width unicode characters.",
-        "Designed SHAP-interpreted Non-Linear Manipulation Entropy (NLME) metrics to precisely quantify urgency and greed triggers via XAI.",
-        "Deployed Structural Forensic Audits (SFA) to provide an uncopiable algorithmic defense layer.",
+        "Engineered Adversarial Obfuscation Buster (AOB v3.0) to detect invisible zero-width Unicode characters.",
+        "Designed SHAP-interpreted Non-Linear Manipulation Entropy (NLME) metrics to quantify urgency and greed triggers.",
+        "Deployed Structural Forensic Audits (SFA) to provide an uncopyable algorithmic defense layer.",
         "Secured intellectual property with official patent filings for Sentinel-AI technologies.",
       ],
       github: "https://github.com/parasagarwal7342/ai-spam-detector-w2",

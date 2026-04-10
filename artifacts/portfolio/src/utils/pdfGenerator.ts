@@ -7,7 +7,7 @@ export const generateResume = (data: PortfolioData) => {
   const sanitize = (text: string) => {
     if (!text) return "";
     return text
-      .replace(/₹/g, "Rs. ")
+      .replace(/₹/g, "INR ")
       .replace(/\u00A0/g, " ") // Replace non-breaking spaces
       .trim();
   };
@@ -32,12 +32,12 @@ export const generateResume = (data: PortfolioData) => {
     }
     y += 5;
     doc.setFont("helvetica", "bold");
-    doc.setFontSize(12);
+    doc.setFontSize(11);
     doc.setTextColor(0, 0, 0);
     doc.text(title.toUpperCase(), margin, y);
-    y += 1.5;
-    doc.setLineWidth(0.2);
-    doc.setDrawColor(180, 180, 180);
+    y += 2;
+    doc.setLineWidth(0.1);
+    doc.setDrawColor(200, 200, 200);
     doc.line(margin, y, pageWidth - margin, y);
     y += 5;
   };
@@ -62,8 +62,8 @@ export const generateResume = (data: PortfolioData) => {
 
   y += 10;
   
-  // Professional Summary
-  addSectionHeader("Professional Summary");
+  // Summary
+  addSectionHeader("SUMMARY");
   doc.setFont("helvetica", "normal");
   doc.setFontSize(10);
   doc.setTextColor(40, 40, 40);
@@ -72,7 +72,7 @@ export const generateResume = (data: PortfolioData) => {
   y += (splitBio.length * 5) + 4;
 
   // Education
-  addSectionHeader("Academic Credentials");
+  addSectionHeader("EDUCATION");
   data.education.forEach((edu) => {
     if (y > pageHeight - 20) { doc.addPage(); y = 15; }
     doc.setFont("helvetica", "bold");
@@ -86,7 +86,7 @@ export const generateResume = (data: PortfolioData) => {
   });
 
   // Core Skills
-  addSectionHeader("Core Technical Skills");
+  addSectionHeader("SKILLS");
   const skillsByCategory: Record<string, string[]> = {};
   data.skills.forEach(skill => {
     if (!skillsByCategory[skill.category]) {
@@ -110,7 +110,7 @@ export const generateResume = (data: PortfolioData) => {
   y += 4;
 
   // Professional Experience
-  addSectionHeader("Professional Experience");
+  addSectionHeader("EXPERIENCE");
   data.experience.forEach((exp) => {
     if (y > pageHeight - 30) { doc.addPage(); y = 15; }
     doc.setFont("helvetica", "bold");
@@ -136,26 +136,21 @@ export const generateResume = (data: PortfolioData) => {
   });
 
   // Projects & Entrepreneurship
-  addSectionHeader("Key Projects & Entrepreneurship (Paraditi Corp)");
+  addSectionHeader("PROJECTS");
   data.projects.forEach((proj) => {
     if (y > pageHeight - 40) { doc.addPage(); y = 15; }
     doc.setFont("helvetica", "bold");
-    doc.setFontSize(10.5);
-    const title = sanitize(`${proj.name} ${proj.isParaditiCorp ? "| Paraditi Corp" : ""}`);
+    doc.setFontSize(10);
+    const title = sanitize(`${proj.name} | ${proj.subtitle}`);
     doc.text(title, margin, y);
     doc.setFont("helvetica", "normal");
     doc.text(sanitize(proj.year), pageWidth - margin, y, { align: "right" });
     y += 5;
-    doc.setFont("helvetica", "italic");
-    doc.setTextColor(80, 80, 80);
-    doc.text(sanitize(proj.subtitle), margin, y);
-    doc.setTextColor(0, 0, 0);
-    y += 5.5;
     doc.setFont("helvetica", "normal");
     doc.setFontSize(9.5);
     const splitDesc = doc.splitTextToSize(sanitize(proj.description), contentWidth);
     doc.text(splitDesc, margin, y);
-    y += (splitDesc.length * 5) + 3;
+    y += (splitDesc.length * 5) + 2;
     doc.setFont("helvetica", "bold");
     doc.text("Technologies: ", margin, y);
     doc.setFont("helvetica", "normal");
@@ -164,7 +159,7 @@ export const generateResume = (data: PortfolioData) => {
   });
 
   // Certifications
-  addSectionHeader("Professional Certifications");
+  addSectionHeader("CERTIFICATIONS");
   data.certifications.forEach((cert) => {
     if (y > pageHeight - 15) { doc.addPage(); y = 15; }
     doc.setFont("helvetica", "bold");
@@ -179,7 +174,7 @@ export const generateResume = (data: PortfolioData) => {
   });
 
   // Job Simulations
-  addSectionHeader("Virtual Work Experience (Forage)");
+  addSectionHeader("VIRTUAL EXPERIENCE");
   data.jobSimulations.forEach((sim) => {
     if (y > pageHeight - 20) { doc.addPage(); y = 15; }
     doc.setFont("helvetica", "bold");
