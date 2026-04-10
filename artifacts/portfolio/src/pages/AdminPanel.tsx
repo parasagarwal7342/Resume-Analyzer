@@ -98,7 +98,10 @@ export default function AdminPanel() {
       // Step 1: Synthesize optimized content using the AI engine
       const res = await fetch("/api/resumes/generate", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          "x-admin-password": ADMIN_PASSWORD 
+        },
         body: JSON.stringify({ 
           userData: editData,
           jobDescription: "Executive Cybersecurity Professional & Founder",

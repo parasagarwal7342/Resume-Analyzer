@@ -26,7 +26,10 @@ export function Hero() {
     try {
       const res = await fetch("/api/resumes/generate", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          "x-admin-password": "Paras@897399"
+        },
         body: JSON.stringify({ 
           userData: data,
           jobDescription: "Executive Information Security Professional",
