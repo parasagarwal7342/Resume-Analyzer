@@ -421,7 +421,7 @@ export const portfolioData = {
         "AI-Native Urban Reblocking identifying optimal emergency access routes",
         "Universal Beneficiary Score (UBS) prioritizing structural aid distribution",
       ],
-      github: null,
+      github: "https://github.com/parasagarwal7342/spatial-intel",
       demo: null,
     },
     {
@@ -441,7 +441,7 @@ export const portfolioData = {
         "Jarvis AI Command Interface for voice-activated facility bookings and resident tasks",
         "Blockchain-Verified Audit Ledgers enforcing Zero-Trust financial governance",
       ],
-      github: null,
+      github: "https://github.com/parasagarwal7342/residential-os",
       demo: null,
     },
     {
@@ -462,7 +462,7 @@ export const portfolioData = {
         "AI-enhanced integrations using Anthropic Claude + OpenAI DALL·E 3",
         "Production-ready deployment via Vercel and Railway",
       ],
-      github: null,
+      github: "https://github.com/parasagarwal7342/SPA-ENTERPRISES",
       demo: "https://spaenterprise.in",
     },
   ],
