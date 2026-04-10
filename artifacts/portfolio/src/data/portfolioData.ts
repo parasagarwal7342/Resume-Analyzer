@@ -274,7 +274,7 @@ export const portfolioData = {
         "A real-time security OS that intercepts every UPI/digital payment transaction before authorization — eliminating fraud at the network edge. The Universal Beneficiary Score (UBS) Engine analyzes multi-nodal transaction histories in under 14ms. Currently securing 14.4M+ nodal points with 8 core patents pending. Built under Paraditi Corp.",
       techStack: ["Node.js", "React", "Android Capacitor", "Behavioral Mapping", "Edge AI", "RAG", "Blockchain"],
       highlights: [
-        "Achieved 14ms Universal Beneficiary Score (UBS) Engine latency, invisibly neutralizing threat actors.",
+        "Achieved 14ms Universal Beneficiary Score (UBS) Engine latency on edge nodes, invisibly neutralizing threat actors.",
         "Secured 14.4M+ nodal points across live payment infrastructure to ensure robust transaction security.",
         "Innovated 8 core patents encompassing behavioral mapping, edge-network artifact analysis, and immutable forensic logging.",
         "Strategized a $3.5M Seed Round focusing on large-scale institutional banking integration.",
@@ -481,6 +481,7 @@ export const portfolioData = {
 };
 
 export type PortfolioData = typeof portfolioData;
+
 
 
 
