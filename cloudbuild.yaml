@@ -97,8 +97,8 @@ steps:
 # ── Substitution variables (set in Cloud Build trigger) ───────
 substitutions:
   _REGION: "us-central1"
-  _FIREBASE_PROJECT_ID: "resume-analyzer-YOUR_PROJECT_ID"
-  _VITE_API_URL: "https://resume-analyzer-api-XXXX-uc.a.run.app"
+  _FIREBASE_PROJECT_ID: "portfolio-a6ccb"
+  _VITE_API_URL: "https://resume-analyzer-api-REPLACE_AFTER_FIRST_DEPLOY-uc.a.run.app"
 
 # ── Store built images ────────────────────────────────────────
 images:
