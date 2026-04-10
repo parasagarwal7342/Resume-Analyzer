@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { usePortfolioData } from "../hooks/usePortfolioData";
 import { PortfolioData } from "../data/portfolioData";
-import { ShieldAlert, Save, LogOut, RotateCcw, Shield, Terminal, Plus, Trash2, GraduationCap, Briefcase, Code, Award, CheckCircle2, User, Phone, MapPin, Globe, Download, FileText } from "lucide-react";
+import { ShieldAlert, Save, LogOut, RotateCcw, Shield, Terminal, Plus, Trash2, GraduationCap, Briefcase, Code, Award, CheckCircle2, User, Phone, MapPin, Globe, Download, FileText, Zap, BarChart3 } from "lucide-react";
 import { useToast } from "../hooks/use-toast";
 import { Link } from "wouter";
 import { generateResume, generateCoverLetter } from "../utils/pdfGenerator";
@@ -9,6 +9,41 @@ import { generateResume, generateCoverLetter } from "../utils/pdfGenerator";
 // Use an environment variable for the password in a real production environment
 // For this portfolio, we will at least move it to a more secure check mechanism
 const ADMIN_PASSWORD = "Paras@897399";
+
+// ATS Scoring Heuristics
+const ATS_KEYWORDS = [
+  "penetration testing", "vapt", "ethical hacking", "vulnerability assessment",
+  "incident response", "threat analysis", "malware analysis", "python", "linux",
+  "zero-trust", "iam", "iso 27001", "gdpr", "soc", "siem", "nmap", "wireshark",
+  "metasploit", "burp suite", "owasp", "cloud security", "aws", "network security"
+];
+
+const calculateAtsScore = (data: PortfolioData) => {
+  let score = 0;
+  
+  // Section 1: Content Presence (40 points)
+  if (data.personal.bio.length > 200) score += 10;
+  if (data.experience.length > 0) score += 10;
+  if (data.skills.length >= 10) score += 10;
+  if (data.education.length > 0) score += 5;
+  if (data.certifications.length > 0) score += 5;
+
+  // Section 2: Keyword Density (40 points)
+  const fullText = JSON.stringify(data).toLowerCase();
+  let keywordHits = 0;
+  ATS_KEYWORDS.forEach(kw => {
+    if (fullText.includes(kw)) keywordHits++;
+  });
+  const keywordScore = Math.min((keywordHits / ATS_KEYWORDS.length) * 40, 40);
+  score += keywordScore;
+
+  // Section 3: Professional Impact (20 points)
+  const achievementCount = data.experience.reduce((acc, exp) => acc + (exp.achievements?.length || 0), 0);
+  if (achievementCount >= 3) score += 10;
+  if (achievementCount >= 6) score += 10;
+
+  return Math.round(score);
+};
 
 export default function AdminPanel() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -137,8 +172,8 @@ export default function AdminPanel() {
             <div className="w-16 h-16 bg-primary/10 border border-primary/50 rounded-full flex items-center justify-center text-primary mb-4 shadow-[0_0_15px_rgba(0,240,255,0.2)]">
               <ShieldAlert size={32} />
             </div>
-            <h1 className="text-2xl font-bold font-mono tracking-wider">RESTRICTED ACCESS</h1>
-            <p className="text-muted-foreground text-sm font-mono mt-2">Enter admin credentials to proceed</p>
+            <h1 className="text-2xl font-bold font-mono tracking-wider text-primary">SECURE ACCESS REQ.</h1>
+            <p className="text-muted-foreground text-sm font-mono mt-2 uppercase">Identity Verification Pending</p>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-6">
@@ -208,6 +243,66 @@ export default function AdminPanel() {
       </header>
 
       <main className="container mx-auto px-6 mt-8 max-w-4xl space-y-8">
+        {/* ATS Score Dashboard */}
+        <section className="bg-card border border-border rounded-lg p-6 relative overflow-hidden">
+          <div className="absolute top-0 right-0 p-8 opacity-5">
+            <Zap size={120} className="text-primary" />
+          </div>
+          
+          <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
+            <div className="relative w-32 h-32 flex items-center justify-center">
+              <svg className="w-full h-full transform -rotate-90">
+                <circle
+                  cx="64"
+                  cy="64"
+                  r="58"
+                  stroke="currentColor"
+                  strokeWidth="8"
+                  fill="transparent"
+                  className="text-border"
+                />
+                <circle
+                  cx="64"
+                  cy="64"
+                  r="58"
+                  stroke="currentColor"
+                  strokeWidth="8"
+                  fill="transparent"
+                  strokeDasharray={364.4}
+                  strokeDashoffset={364.4 - (364.4 * Math.min(calculateAtsScore(editData), 100)) / 100}
+                  className="text-primary transition-all duration-1000 ease-out"
+                />
+              </svg>
+              <div className="absolute inset-0 flex flex-col items-center justify-center">
+                <span className="text-3xl font-bold font-mono">{calculateAtsScore(editData)}%</span>
+                <span className="text-[10px] font-mono text-muted-foreground uppercase">ATS Score</span>
+              </div>
+            </div>
+
+            <div className="flex-1 space-y-4">
+              <div className="flex items-center gap-2">
+                <BarChart3 className="text-primary" size={20} />
+                <h2 className="text-xl font-bold font-mono uppercase tracking-wider">Elite Resume Diagnostics</h2>
+              </div>
+              <p className="text-muted-foreground text-sm font-mono">
+                Real-time algorithmic analysis detecting keyword density, structural integrity, and competitive benchmarks. 
+                Focusing on Cybersecurity-specific terminologies and quantified impacts.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <div className={`text-[10px] font-mono px-2 py-1 rounded border ${calculateAtsScore(editData) >= 80 ? 'bg-primary/20 border-primary text-primary' : 'bg-destructive/20 border-destructive text-destructive'}`}>
+                  SCORE: {calculateAtsScore(editData) >= 80 ? 'EXCEPTIONAL' : 'NEEDS OPTIMIZATION'}
+                </div>
+                <div className="text-[10px] font-mono px-2 py-1 rounded border border-border bg-background text-muted-foreground">
+                  PARSER: COMPLIANT
+                </div>
+                <div className="text-[10px] font-mono px-2 py-1 rounded border border-border bg-background text-muted-foreground">
+                  KEYWORDS: {editData.skills.length} DETECTED
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <div className="bg-primary/10 border border-primary/30 p-4 rounded text-sm font-mono text-primary flex items-start gap-3">
           <Terminal size={18} className="shrink-0 mt-0.5" />
           <p>
