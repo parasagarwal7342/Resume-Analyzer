@@ -38,10 +38,10 @@ export default function ResumeIQDashboard() {
   const { toast } = useToast();
 
   const handleAnalyze = async () => {
-    if (!resumeText || !jobDescription) {
+    if (!resumeText) {
       toast({
         title: "Missing Data",
-        description: "Please provide both resume text and job description.",
+        description: "Please provide resume text to analyze.",
         variant: "destructive",
       });
       return;
@@ -66,7 +66,10 @@ export default function ResumeIQDashboard() {
       const scoreRes = await fetch("/api/ats/score", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ resumeId, jobDescription }),
+        body: JSON.stringify({ 
+          resumeId, 
+          jobDescription: jobDescription || "General resume audit for professional standards and ATS compatibility." 
+        }),
       });
       const scoreData = await scoreRes.json();
       setAtsResult(scoreData);
@@ -93,8 +96,8 @@ export default function ResumeIQDashboard() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ 
-          userData: { text: resumeText }, // In a real app, this would be structured data
-          jobDescription,
+          userData: { text: resumeText },
+          jobDescription: jobDescription || "Professional Profile",
           template: "modern"
         }),
       });
@@ -204,7 +207,6 @@ export default function ResumeIQDashboard() {
              {[
                { id: 'ats', label: 'ATS Checker', icon: BarChart3 },
                { id: 'generator', label: 'AI Generator', icon: Wand2 },
-               { id: 'matcher', label: 'Job Matcher', icon: Search },
                { id: 'portfolio', label: 'Public Portfolio', icon: LayoutDashboard },
              ].map((item) => (
                <button
@@ -252,15 +254,7 @@ export default function ResumeIQDashboard() {
                             className="bg-background/50 border-border/50 font-sans min-h-[150px]"
                           />
                         </div>
-                        <div className="space-y-2">
-                          <label className="text-[10px] uppercase tracking-widest text-muted-foreground font-mono">Job Description</label>
-                          <Textarea 
-                            placeholder="Paste the target JD here..." 
-                            value={jobDescription}
-                            onChange={(e) => setJobDescription(e.target.value)}
-                            className="bg-background/50 border-border/50 font-sans min-h-[150px]"
-                          />
-                        </div>
+                        {/* Removed Job Description field as per user request */}
                         <Button 
                           onClick={handleAnalyze} 
                           disabled={isAnalyzing}
