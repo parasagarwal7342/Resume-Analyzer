@@ -84,7 +84,7 @@ export const portfolioData = {
       current: false,
       description: "Engineered database security integrity solutions and collaborated on cybersecurity projects.",
       achievements: [
-        "Orchestrated comprehensive database security audits and integrity checks, achieving 100% compliance with ISO 27001 and GDPR data protection standards.",
+        "Orchestrated comprehensive database security audits and integrity checks, achieving 100% compliance with ISO 27001, SOC2, and GDPR data protection standards.",
         "Spearheaded 5+ advanced cybersecurity workshops, mastering elite threat mitigation strategies and offensive security tactics.",
         "Automated incident response workflows using Python, reducing triage time by 30% across 3+ enterprise-scale security initiatives.",
         "Developed custom Nmap scripts for specialized vulnerability scanning against proprietary network protocols.",
@@ -481,6 +481,7 @@ export const portfolioData = {
 };
 
 export type PortfolioData = typeof portfolioData;
+
 
 
 
