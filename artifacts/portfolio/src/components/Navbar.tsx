@@ -25,7 +25,6 @@ export function Navbar() {
     { name: "Projects", href: "#projects" },
     { name: "Paraditi Corp", href: "#paraditi" },
     { name: "Experience", href: "#experience" },
-    { name: "ResumeIQ Pro", href: "/resume-iq" },
     { name: "Contact", href: "#contact" },
   ];
 

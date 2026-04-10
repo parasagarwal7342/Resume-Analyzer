@@ -40,26 +40,11 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ["react", "react-dom", "framer-motion", "wouter"],
-          ui: ["@radix-ui/react-dialog", "@radix-ui/react-slot", "lucide-react"],
-        },
-      },
-    },
-    chunkSizeWarningLimit: 1000,
   },
   server: {
     port,
     host: "0.0.0.0",
     allowedHosts: true,
-    proxy: {
-      "/api": {
-        target: `http://localhost:5000`,
-        changeOrigin: true,
-      },
-    },
     fs: {
       strict: true,
       deny: ["**/.*"],

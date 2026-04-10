@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { usePortfolioData } from "../hooks/usePortfolioData";
 import { PortfolioData } from "../data/portfolioData";
-import { ShieldAlert, Save, LogOut, RotateCcw, Shield, Terminal, Plus, Trash2, GraduationCap, Briefcase, Code, Award, CheckCircle2, User, Phone, MapPin, Globe, Wand2, Download, RefreshCcw } from "lucide-react";
+import { ShieldAlert, Save, LogOut, RotateCcw, Shield, Terminal, Plus, Trash2, GraduationCap, Briefcase, Code, Award, CheckCircle2, User, Phone, MapPin, Globe } from "lucide-react";
 import { useToast } from "../hooks/use-toast";
 import { Link } from "wouter";
-import { generateResume } from "../utils/pdfGenerator";
 
 // Use an environment variable for the password in a real production environment
 // For this portfolio, we will at least move it to a more secure check mechanism
@@ -17,7 +16,6 @@ export default function AdminPanel() {
   const [lockoutUntil, setLockoutUntil] = useState<number | null>(null);
   const { data, updateData, resetData } = usePortfolioData();
   const [editData, setEditData] = useState<PortfolioData>(data);
-  const [isOptimizing, setIsOptimizing] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -84,63 +82,6 @@ export default function AdminPanel() {
       resetData();
       setEditData(data);
       setTimeout(() => window.location.reload(), 100);
-    }
-  };
-
-  const handleOptimizedDownload = async () => {
-    setIsOptimizing(true);
-    toast({
-      title: "Synthesizing AI Resume",
-      description: "Optimizing your content for ATS compatibility...",
-    });
-
-    try {
-      // Step 1: Synthesize optimized content using the AI engine
-      const res = await fetch("/api/resumes/generate", {
-        method: "POST",
-        headers: { 
-          "Content-Type": "application/json",
-          "x-admin-password": ADMIN_PASSWORD 
-        },
-        body: JSON.stringify({ 
-          userData: editData,
-          jobDescription: "Executive Cybersecurity Professional & Founder",
-          template: "modern"
-        }),
-      });
-      
-      const optimized = await res.json();
-      
-      // Step 2: In a real app we'd map this back to PortfolioData structure
-      // For now, we'll download using a dedicated optimized flow
-      // We'll merge the optimized summary and experience back into a temp object
-      const docData: PortfolioData = JSON.parse(JSON.stringify(editData));
-      
-      if (optimized.content?.summary) docData.personal.bio = optimized.content.summary;
-      if (optimized.content?.experience) {
-        // Simple mapping of optimized achievements
-        optimized.content.experience.forEach((optExp: any, i: number) => {
-          if (docData.experience[i]) {
-            docData.experience[i].achievements = optExp.achievements || docData.experience[i].achievements;
-          }
-        });
-      }
-
-      generateResume(docData);
-
-      toast({
-        title: "Download Complete",
-        description: "Your ATS-optimized resume has been generated.",
-      });
-    } catch (error) {
-      toast({
-        title: "Optimization Failed",
-        description: "Falling back to standard resume download.",
-        variant: "destructive"
-      });
-      generateResume(editData);
-    } finally {
-      setIsOptimizing(false);
     }
   };
 
@@ -236,14 +177,6 @@ export default function AdminPanel() {
           <div className="flex items-center gap-4">
             <button onClick={handleReset} className="text-sm font-mono text-muted-foreground hover:text-destructive flex items-center gap-2 transition-colors">
               <RotateCcw size={16} /> Reset
-            </button>
-            <button 
-              onClick={handleOptimizedDownload} 
-              disabled={isOptimizing}
-              className="text-sm font-mono bg-secondary text-secondary-foreground px-4 py-2 rounded flex items-center gap-2 hover:bg-secondary/90 transition-colors shadow-[0_0_15px_rgba(255,255,255,0.05)]"
-            >
-              {isOptimizing ? <RefreshCcw size={16} className="animate-spin" /> : <Wand2 size={16} />}
-              ATS Optimize & DL
             </button>
             <button onClick={handleSave} className="text-sm font-mono bg-primary text-primary-foreground px-4 py-2 rounded flex items-center gap-2 hover:bg-primary/90 transition-colors">
               <Save size={16} /> Save Changes

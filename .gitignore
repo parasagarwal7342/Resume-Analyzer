@@ -47,12 +47,3 @@ Thumbs.db
 # Replit
 .cache/
 .local/
-
-# Large Assets & Data
-attached_assets/
-*.zip
-*.pptx
-*.pdf
-*.mp4
-*.MOV
-*.exe

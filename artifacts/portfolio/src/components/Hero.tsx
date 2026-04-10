@@ -1,70 +1,15 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Download, ChevronRight, Terminal, Wand2, RefreshCcw } from "lucide-react";
+import { Download, ChevronRight, Terminal } from "lucide-react";
 import { usePortfolioData } from "../hooks/usePortfolioData";
 import { generateResume, generateCoverLetter } from "../utils/pdfGenerator";
-import { Link } from "wouter";
-import { useToast } from "../hooks/use-toast";
-import { PortfolioData } from "../data/portfolioData";
 
 export function Hero() {
   const { data } = usePortfolioData();
   const [roleIndex, setRoleIndex] = useState(0);
-  const [isOptimizing, setIsOptimizing] = useState(false);
-  const { toast } = useToast();
 
   // Hidden check based on URL query parameter ?admin=true
   const isAdmin = new URLSearchParams(window.location.search).get("admin") === "true";
-
-  const handleAdminDownload = async () => {
-    setIsOptimizing(true);
-    toast({
-      title: "Synthesizing AI Resume",
-      description: "Optimizing content for professional ATS standards...",
-    });
-
-    try {
-      const res = await fetch("/api/resumes/generate", {
-        method: "POST",
-        headers: { 
-          "Content-Type": "application/json",
-          "x-admin-password": "Paras@897399"
-        },
-        body: JSON.stringify({ 
-          userData: data,
-          jobDescription: "Executive Information Security Professional",
-          template: "modern"
-        }),
-      });
-      
-      const optimized = await res.json();
-      const docData: PortfolioData = JSON.parse(JSON.stringify(data));
-      
-      if (optimized.content?.summary) docData.personal.bio = optimized.content.summary;
-      if (optimized.content?.experience) {
-        optimized.content.experience.forEach((optExp: any, i: number) => {
-          if (docData.experience[i]) {
-            docData.experience[i].achievements = optExp.achievements || docData.experience[i].achievements;
-          }
-        });
-      }
-
-      generateResume(docData);
-      toast({
-        title: "Success",
-        description: "ATS-Friendly resume has been processed and downloaded.",
-      });
-    } catch (error) {
-      toast({
-        title: "AI Optimization Unavailable",
-        description: "Downloading standard version instead.",
-        variant: "destructive"
-      });
-      generateResume(data);
-    } finally {
-      setIsOptimizing(false);
-    }
-  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -144,14 +89,13 @@ export function Hero() {
             {isAdmin && (
               <>
                 <button
-                  onClick={handleAdminDownload}
-                  disabled={isOptimizing}
-                  className="group relative px-8 py-4 bg-primary text-primary-foreground font-mono font-bold uppercase tracking-wider overflow-hidden rounded-sm disabled:opacity-70"
+                  onClick={() => generateResume(data)}
+                  className="group relative px-8 py-4 bg-primary text-primary-foreground font-mono font-bold uppercase tracking-wider overflow-hidden rounded-sm"
                 >
                   <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                   <span className="relative flex items-center gap-2">
-                    {isOptimizing ? <RefreshCcw size={18} className="animate-spin" /> : <Download size={18} />}
-                    {isOptimizing ? "Optimizing..." : "Download Resume"}
+                    <Download size={18} />
+                    Download Resume
                   </span>
                 </button>
 
@@ -165,20 +109,9 @@ export function Hero() {
               </>
             )}
 
-            <Link
-              href="/resume-iq"
-              className="group relative px-8 py-4 bg-primary text-primary-foreground font-mono font-bold uppercase tracking-wider overflow-hidden rounded-sm"
-            >
-              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-              <span className="relative flex items-center gap-2">
-                <Wand2 size={18} />
-                ResumeIQ Pro
-              </span>
-            </Link>
-
             <a
               href="#projects"
-              className="px-8 py-4 border border-primary/50 text-primary font-mono font-bold uppercase tracking-wider hover:bg-primary/10 transition-colors rounded-sm flex items-center gap-2"
+              className="px-8 py-4 text-foreground font-mono font-bold uppercase tracking-wider hover:text-primary transition-colors flex items-center gap-2"
             >
               View Operations
               <ChevronRight size={18} />

@@ -1,0 +1,76 @@
+# AutoCA 4.0 - Sovereign AI Intelligence Platform
+
+AutoCA 4.0 is a cutting-edge, full-stack application designed to revolutionize financial compliance and accounting for consumers, business owners, and Chartered Accountants (CAs). It leverages advanced AI, blockchain anchoring, and a sovereign identity model to provide a secure, autonomous, and highly efficient financial ecosystem.
+
+## 🚀 Key Features
+
+### 1. One-Click AI Filing (Consumer Portal)
+- **Autonomous Ingestion:** Upload any financial document (Invoices, Salary Slips, Bank Statements).
+- **AI Extraction:** Powered by Gemini AI to automatically extract amount, GST, category, and date with high confidence.
+- **Drag-and-Drop Interface:** Modern, intuitive upload section with real-time visual feedback.
+- **Usage-Based Billing:** Consumers pay only for what they use (₹50 per document processed).
+
+### 2. Expert Audit Panel (CA Portal)
+- **AI-Assisted Oversight:** CAs can review flagged documents that the AI identified as high-risk or low-confidence.
+- **Client Management:** Manage multiple clients and their document vaults from a single dashboard.
+- **Blockchain Integrity:** Every document action is anchored to a mock blockchain for a tamper-proof audit trail.
+
+### 3. Financial Intelligence Dashboard
+- **Real-time Tax Projection:** Live estimation of tax liability based on income, expenses, and deductions.
+- **Sovereign Health Score:** A holistic metric representing the user's compliance and security standing.
+- **Interactive Analytics:** Monthly income vs. expense comparisons using Recharts.
+
+### 4. Specialized Portals
+- **Stock Market Hub:** Technical, data-dense interface for market analysis and expert advisory.
+- **Legal Advisory Portal:** Refined, luxury-themed portal for corporate and tax legal counsel.
+- **Neural Assistant:** Atmospheric, glassmorphic chat interface for financial queries.
+
+### 5. Advanced Security
+- **Biometric Simulation:** Mocked fingerprint/biometric login for enhanced security feel.
+- **Quantum-Safe Encryption:** Thematic focus on future-proof security standards.
+- **Blockchain Audit Trail:** Transparent log of all document-related activities.
+
+## 🛠 Tech Stack
+
+- **Frontend:** React 18, Vite, Tailwind CSS, Framer Motion (animations), Recharts (data visualization), Lucide React (icons).
+- **Backend:** Node.js, Express, Multer (file uploads), JSON Web Tokens (authentication).
+- **Database:** SQLite (via `sqlite3` and `sqlite` wrapper) for robust, local data persistence.
+- **AI Engine:** Google Gemini AI (`@google/genai`) for document processing and chat assistance.
+
+## 📊 Database Schema
+
+### `users`
+Tracks user identities, roles, and usage.
+- `id`, `tenant_id`, `email`, `password`, `role`, `name`, `document_count`.
+
+### `documents`
+The central vault for all uploaded financial records.
+- `id`, `user_id`, `filename`, `doc_type`, `status` (PENDING, PROCESSED, FLAGGED, etc.), `metadata` (JSON), `blockchain_hash`.
+
+### `transactions`
+The ledger for income and expenses extracted from documents.
+- `id`, `user_id`, `amount`, `gst_amount`, `category`, `date`.
+
+### `ca_services`
+Catalog of available services offered by the platform.
+- `id`, `category`, `title`, `description`, `required_documents` (JSON).
+
+## 🔌 API Endpoints (Partial List)
+
+- `POST /api/auth/login`: Authenticate and receive a JWT.
+- `POST /api/documents/upload`: Upload and AI-process a document.
+- `GET /api/user/billing`: Retrieve usage-based billing information.
+- `GET /api/compliance/summary`: Get tax projections and financial health.
+- `GET /api/ca/flagged`: (CA Only) Fetch documents requiring manual audit.
+- `POST /api/ai/chat`: Interact with the AutoCA AI Assistant.
+
+## 🎨 Design Philosophy
+
+AutoCA 4.0 uses **Intentional Variation** to distinguish its different portals:
+- **LexPulse:** Editorial/Magazine style for news and updates.
+- **Stock Market:** Hardware/Terminal aesthetic for technical precision.
+- **Neural Assistant:** Atmospheric/Immersive for AI interactions.
+- **Legal Portal:** Luxury/Prestige for high-end advisory.
+
+---
+*Developed as a Sovereign AI Intelligence Platform for the future of finance.*

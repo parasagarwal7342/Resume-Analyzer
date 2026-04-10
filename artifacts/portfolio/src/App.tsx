@@ -5,7 +5,6 @@ import { TooltipProvider } from "./components/ui/tooltip";
 import NotFound from "./pages/not-found";
 import Portfolio from "./pages/Portfolio";
 import AdminPanel from "./pages/AdminPanel";
-import ResumeIQDashboard from "./pages/ResumeIQDashboard";
 
 const queryClient = new QueryClient();
 
@@ -14,7 +13,6 @@ function Router() {
     <Switch>
       <Route path="/" component={Portfolio} />
       <Route path="/admin" component={AdminPanel} />
-      <Route path="/resume-iq" component={ResumeIQDashboard} />
       <Route component={NotFound} />
     </Switch>
   );
@@ -24,7 +22,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <WouterRouter base={import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL.replace(/\/$/, "")}>
+        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
           <Router />
         </WouterRouter>
         <Toaster />

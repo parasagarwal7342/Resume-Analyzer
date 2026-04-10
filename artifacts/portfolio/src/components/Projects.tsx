@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { usePortfolioData } from "../hooks/usePortfolioData";
-import { ExternalLink, Github, Database, Smartphone, Globe, Cloud, Wand2 } from "lucide-react";
-import { Link } from "wouter";
+import { ExternalLink, Github, Database, Smartphone, Globe, Cloud } from "lucide-react";
 
 export function Projects() {
   const { data } = usePortfolioData();
@@ -80,15 +79,11 @@ export function Projects() {
                       <Github size={16} /> Source Code
                     </a>
                   )}
-                  {project.demo && project.demo.startsWith('/') ? (
-                    <Link href={project.demo} className="flex items-center gap-2 text-sm font-mono text-primary hover:glow-cyan transition-all">
-                      <Wand2 size={16} /> Launch AI Engine
-                    </Link>
-                  ) : project.demo ? (
+                  {project.demo && (
                     <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-mono text-muted-foreground hover:text-primary transition-colors">
                       <ExternalLink size={16} /> Live Demo
                     </a>
-                  ) : null}
+                  )}
                   {!project.github && !project.demo && (
                     <span className="flex items-center gap-2 text-sm font-mono text-muted-foreground/50 cursor-not-allowed">
                       <ExternalLink size={16} /> Restricted Access
