@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { usePortfolioData } from "../hooks/usePortfolioData";
 import { PortfolioData } from "../data/portfolioData";
-import { ShieldAlert, Save, LogOut, RotateCcw, Shield, Terminal, Plus, Trash2, GraduationCap, Briefcase, Code, Award, CheckCircle2, User, Phone, MapPin, Globe } from "lucide-react";
+import { ShieldAlert, Save, LogOut, RotateCcw, Shield, Terminal, Plus, Trash2, GraduationCap, Briefcase, Code, Award, CheckCircle2, User, Phone, MapPin, Globe, Download, FileText } from "lucide-react";
 import { useToast } from "../hooks/use-toast";
 import { Link } from "wouter";
+import { generateResume, generateCoverLetter } from "../utils/pdfGenerator";
 
 // Use an environment variable for the password in a real production environment
 // For this portfolio, we will at least move it to a more secure check mechanism
@@ -172,17 +173,35 @@ export default function AdminPanel() {
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Shield className="text-primary" size="20" />
-            <span className="font-mono font-bold text-lg">SYSTEM ADMINISTRATION</span>
+            <span className="font-mono font-bold text-lg hidden md:inline">SYSTEM ADMINISTRATION</span>
+            <span className="font-mono font-bold text-lg md:hidden">ADMIN</span>
           </div>
-          <div className="flex items-center gap-4">
-            <button onClick={handleReset} className="text-sm font-mono text-muted-foreground hover:text-destructive flex items-center gap-2 transition-colors">
-              <RotateCcw size={16} /> Reset
+          <div className="flex items-center gap-2 md:gap-4 flex-wrap justify-end">
+            <div className="flex bg-card border border-border rounded overflow-hidden">
+              <button 
+                onClick={() => generateResume(editData)} 
+                className="text-xs font-mono px-3 py-2 text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors flex items-center gap-1 border-r border-border"
+                title="Download updated Resume PDF"
+              >
+                <Download size={14} /> Resume
+              </button>
+              <button 
+                onClick={() => generateCoverLetter(editData)} 
+                className="text-xs font-mono px-3 py-2 text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors flex items-center gap-1"
+                title="Download updated Cover Letter PDF"
+              >
+                <FileText size={14} /> Cover
+              </button>
+            </div>
+            
+            <button onClick={handleReset} className="text-xs md:text-sm font-mono text-muted-foreground hover:text-destructive flex items-center gap-1 md:gap-2 transition-colors ml-2">
+              <RotateCcw size={16} /> <span className="hidden md:inline">Reset</span>
             </button>
-            <button onClick={handleSave} className="text-sm font-mono bg-primary text-primary-foreground px-4 py-2 rounded flex items-center gap-2 hover:bg-primary/90 transition-colors">
-              <Save size={16} /> Save Changes
+            <button onClick={handleSave} className="text-xs md:text-sm font-mono bg-primary text-primary-foreground px-3 py-2 md:px-4 rounded flex items-center gap-1 md:gap-2 hover:bg-primary/90 transition-colors">
+              <Save size={16} /> <span className="hidden md:inline">Save Changes</span>
             </button>
-            <button onClick={() => setIsAuthenticated(false)} className="text-sm font-mono text-muted-foreground hover:text-foreground flex items-center gap-2 transition-colors ml-4 border-l border-border pl-4">
-              <LogOut size={16} /> Exit
+            <button onClick={() => setIsAuthenticated(false)} className="text-xs md:text-sm font-mono text-muted-foreground hover:text-foreground flex items-center gap-1 md:gap-2 transition-colors md:ml-4 md:border-l md:border-border md:pl-4">
+              <LogOut size={16} /> <span className="hidden md:inline">Exit</span>
             </button>
           </div>
         </div>
