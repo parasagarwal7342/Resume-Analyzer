@@ -87,7 +87,7 @@ export const portfolioData = {
         "Orchestrated comprehensive database security audits and integrity checks, achieving 100% compliance with ISO 27001, SOC2, and GDPR data protection standards.",
         "Spearheaded 5+ advanced cybersecurity workshops, mastering elite threat mitigation strategies and offensive security tactics.",
         "Automated incident response workflows using Python, reducing triage time by 30% across 3+ enterprise-scale security initiatives.",
-        "Developed custom Nmap scripts for specialized vulnerability scanning against proprietary network protocols.",
+        "Developed custom Nmap scripts for specialized vulnerability scanning against proprietary industrial control systems (ICS) protocols.",
         "Collaborated with cross-functional teams to implement a Zero-Trust IAM framework across a distributed cloud environment.",
       ],
     },
@@ -481,6 +481,7 @@ export const portfolioData = {
 };
 
 export type PortfolioData = typeof portfolioData;
+
 
 
 
