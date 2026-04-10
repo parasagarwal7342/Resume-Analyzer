@@ -43,7 +43,7 @@ export const portfolioData = {
     { name: "Penetration Testing (VAPT)", category: "Offensive Security", level: 92 },
     { name: "Ethical Hacking (CEH)", category: "Offensive Security", level: 90 },
     { name: "Vulnerability Assessment", category: "Offensive Security", level: 89 },
-    { name: "Metasploit & Burp Suite", category: "Offensive Security", level: 85 },
+    { name: "Metasploit and Burp Suite (Advanced)", category: "Offensive Security", level: 85 },
     { name: "Exploit Development", category: "Offensive Security", level: 78 },
     { name: "OWASP Top 10", category: "Offensive Security", level: 90 },
     // Cybersecurity
@@ -481,4 +481,5 @@ export const portfolioData = {
 };
 
 export type PortfolioData = typeof portfolioData;
+
 
