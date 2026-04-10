@@ -441,7 +441,7 @@ export const portfolioData = {
         "A mission-critical apartment and society management ecosystem, built as a high-fidelity Digital Twin. Provides a unified, voice-integrated sovereign command center for autonomous facility management, equipped with AES-encrypted visitor nodes.",
       techStack: ["React 18", "Vite", "Framer Motion", "IoT SDK", "Blockchain", "Tailwind CSS"],
       highlights: [
-        "Deployed Digital Twin asset monitoring systems combining comprehensive IoT tracking and physical-to-digital mapping.",
+        "Deployed Digital Twin asset monitoring using MQTT/IoT protocols combining comprehensive IoT tracking and physical-to-digital mapping.",
         "Developed the Jarvis AI Command Interface to enable voice-activated facility bookings and streamline resident tasks.",
         "Integrated Blockchain-Verified Audit Ledgers to strictly enforce Zero-Trust financial governance standards.",
       ],
@@ -481,6 +481,7 @@ export const portfolioData = {
 };
 
 export type PortfolioData = typeof portfolioData;
+
 
 
 
