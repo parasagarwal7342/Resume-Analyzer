@@ -355,11 +355,11 @@ export const portfolioData = {
       featured: true,
       isParaditiCorp: true,
       description:
-        "Week 2 Project: An uncopiable, IP-hardened email fraud detection framework. Uses a four-layer Sovereign Logic Fusion (SLF) consisting of Structural Integrity Audit (SFA), DNA Pattern matching, Machine Learning Ensemble, and Explainable AI (XAI) analysis to flag threats based on Non-Linear Manipulation Entropy. Built under Paraditi Corp.",
+        "Week 2 Project: An uncopiable, IP-hardened email fraud detection framework. Uses a four-layer Sovereign Logic Fusion (SLF) consisting of Structural Integrity Audit (SFA), DNA Pattern matching, Machine Learning Ensemble, and Explainable AI (XAI) analysis to flag threats based on SHAP-interpreted Non-Linear Manipulation Entropy. Built under Paraditi Corp.",
       techStack: ["Python", "Flask", "XGBoost", "NLTK", "Scikit", "Cyber-Dark UI", "AOB v3.0"],
       highlights: [
         "Engineered Adversarial Obfuscation Buster (AOB v3.0) to successfully detect invisible zero-width unicode characters.",
-        "Designed Non-Linear Manipulation Entropy (NLME) metrics to precisely quantify urgency and greed triggers via XAI.",
+        "Designed SHAP-interpreted Non-Linear Manipulation Entropy (NLME) metrics to precisely quantify urgency and greed triggers via XAI.",
         "Deployed Structural Forensic Audits (SFA) to provide an uncopiable algorithmic defense layer.",
         "Secured intellectual property with official patent filings for Sentinel-AI technologies.",
       ],
@@ -481,6 +481,7 @@ export const portfolioData = {
 };
 
 export type PortfolioData = typeof portfolioData;
+
 
 
 
