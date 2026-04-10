@@ -296,7 +296,7 @@ export const portfolioData = {
       techStack: ["TensorFlow", "OpenCV", "Polygon Blockchain", "Python", "Node.js", "React", "Mobile SDK"],
       highlights: [
         "Implemented a 3-tier chain of custody encompassing pre-shipment, doorstep pickup, and warehouse verification.",
-        "Optimized seller scan time to 30 seconds utilizing blockchain-anchored, tamper-proof cryptographic hashes.",
+        "Optimized seller scan time to 30 seconds utilizing Polygon-anchored, tamper-proof cryptographic hashes.",
         "Mitigated ₹4,000 Crore in annual return fraud costs for Indian MSME sellers.",
         "Pioneered a patent-pending multi-stage triangulation methodology for advanced tampering detection.",
       ],
@@ -481,6 +481,7 @@ export const portfolioData = {
 };
 
 export type PortfolioData = typeof portfolioData;
+
 
 
 
