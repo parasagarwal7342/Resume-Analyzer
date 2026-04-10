@@ -50,7 +50,7 @@ export const portfolioData = {
     { name: "IAM & PAM", category: "Cybersecurity", level: 85 },
     { name: "Incident Response", category: "Cybersecurity", level: 85 },
     { name: "Threat Analysis & Hunting", category: "Cybersecurity", level: 86 },
-    { name: "SIEM & SOC Operations", category: "Cybersecurity", level: 82 },
+    { name: "SIEM and SOC Operations (Splunk/ELK)", category: "Cybersecurity", level: 82 },
     { name: "Malware Analysis", category: "Cybersecurity", level: 80 },
     { name: "Web Security (XSS/SQLi)", category: "Cybersecurity", level: 88 },
     { name: "Zero-Trust Architecture", category: "Cybersecurity", level: 85 },
@@ -481,5 +481,6 @@ export const portfolioData = {
 };
 
 export type PortfolioData = typeof portfolioData;
+
 
 
