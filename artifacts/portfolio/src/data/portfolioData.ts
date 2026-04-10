@@ -313,10 +313,10 @@ export const portfolioData = {
       featured: false,
       isParaditiCorp: true,
       description:
-        "A full-stack AI platform revolutionizing financial compliance for consumers, CAs, and business owners. Features one-click AI filing with Gemini AI document extraction, CA audit panel, real-time tax projection, sovereign health score, and blockchain audit trail. Specialized portals for stock market, legal advisory, and AI-powered financial chat assistant. Built under Paraditi Corp.",
-      techStack: ["React 18", "Vite", "Node.js", "SQLite", "Google Gemini AI", "Framer Motion", "Recharts", "Blockchain"],
+        "A full-stack AI platform revolutionizing financial compliance for consumers, CAs, and business owners. Features one-click AI filing with Gemini 1.5 Pro document extraction, CA audit panel, real-time tax projection, sovereign health score, and blockchain audit trail. Specialized portals for stock market, legal advisory, and AI-powered financial chat assistant. Built under Paraditi Corp.",
+      techStack: ["React 18", "Vite", "Node.js", "SQLite", "Google Gemini 1.5 Pro", "Framer Motion", "Recharts", "Blockchain"],
       highlights: [
-        "Automated document extraction utilizing Gemini AI for rapid processing of invoices, salary slips, and bank statements.",
+        "Automated document extraction utilizing Gemini 1.5 Pro for rapid processing of invoices, salary slips, and bank statements.",
         "Engineered a CA audit panel integrating blockchain technology to guarantee tamper-proof audit trails.",
         "Built a real-time tax projection dashboard featuring an innovative sovereign health scoring system.",
         "Developed specialized portals for Stock Market analysis, Legal Advisory, and a Neural AI Assistant.",
@@ -481,6 +481,7 @@ export const portfolioData = {
 };
 
 export type PortfolioData = typeof portfolioData;
+
 
 
 
