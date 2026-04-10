@@ -12,7 +12,7 @@ export const portfolioData = {
     phone: "+91 8587897399",
     linkedin: "https://linkedin.com/in/paras-agrawal-a1b691201",
     github: "https://github.com/parasagarwal7342",
-    website: "https://portfolio-a6ccb.web.app",
+    website: "https://paraditicorp.com",
     availableForWork: true,
     roles: [
       "Penetration Tester",
@@ -385,7 +385,7 @@ export const portfolioData = {
         "Integrated real-time streaming UI components leveraging the Tailwind CSS framework.",
       ],
       github: "https://github.com/parasagarwal7342/Resume-Analyzer",
-      demo: "https://portfolio-a6ccb.web.app",
+      demo: "https://paraditicorp.com",
     },
     {
       id: "shadowguard",
