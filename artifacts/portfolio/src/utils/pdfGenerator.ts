@@ -34,36 +34,29 @@ export const generateResume = (data: PortfolioData) => {
     doc.setFont("helvetica", "bold");
     doc.setFontSize(11);
     doc.setTextColor(0, 0, 0);
-    doc.text(title.toUpperCase(), margin, y);
-    y += 2;
-    doc.setLineWidth(0.1);
-    doc.setDrawColor(200, 200, 200);
-    doc.line(margin, y, pageWidth - margin, y);
-    y += 5;
+    doc.text(title, margin, y);
+    y += 6;
   };
 
-  // Header - Centered
+  // Header Section - Left Aligned for best parsing
   doc.setFont("helvetica", "bold");
   doc.setFontSize(22);
   doc.setTextColor(0, 0, 0);
-  doc.text(sanitize(data.personal.name.toUpperCase()), pageWidth / 2, y, { align: "center" });
-  
-  y += 7;
+  doc.text(sanitize(data.personal.name), margin, y);
+  y += 8;
+
   doc.setFont("helvetica", "normal");
   doc.setFontSize(10);
   doc.setTextColor(60, 60, 60);
-  const contactInfo = sanitize(`${data.personal.location} | ${data.personal.phone} | ${data.personal.email}`);
-  doc.text(contactInfo, pageWidth / 2, y, { align: "center" });
-  
+  doc.text(sanitize(data.personal.location), margin, y);
   y += 5;
-  const website = data.personal.website || "https://portfolio-a6ccb.web.app";
-  const links = sanitize(`${data.personal.linkedin.replace("https://", "")} | ${data.personal.github.replace("https://", "")} | ${website.replace("https://", "")}`);
-  doc.text(links, pageWidth / 2, y, { align: "center" });
-
+  doc.text(sanitize(`${data.personal.phone}  |  ${data.personal.email}`), margin, y);
+  y += 5;
+  doc.text(sanitize(data.personal.website), margin, y);
   y += 10;
   
   // Summary
-  addSectionHeader("SUMMARY");
+  addSectionHeader("Summary");
   doc.setFont("helvetica", "normal");
   doc.setFontSize(10);
   doc.setTextColor(40, 40, 40);
@@ -72,7 +65,7 @@ export const generateResume = (data: PortfolioData) => {
   y += (splitBio.length * 5) + 4;
 
   // Education
-  addSectionHeader("EDUCATION");
+  addSectionHeader("Education");
   data.education.forEach((edu) => {
     if (y > pageHeight - 20) { doc.addPage(); y = 15; }
     doc.setFont("helvetica", "bold");
@@ -86,7 +79,7 @@ export const generateResume = (data: PortfolioData) => {
   });
 
   // Core Skills
-  addSectionHeader("SKILLS");
+  addSectionHeader("Technical Skills");
   const skillsByCategory: Record<string, string[]> = {};
   data.skills.forEach(skill => {
     if (!skillsByCategory[skill.category]) {
@@ -110,7 +103,7 @@ export const generateResume = (data: PortfolioData) => {
   y += 4;
 
   // Professional Experience
-  addSectionHeader("EXPERIENCE");
+  addSectionHeader("Work Experience");
   data.experience.forEach((exp) => {
     if (y > pageHeight - 30) { doc.addPage(); y = 15; }
     doc.setFont("helvetica", "bold");
@@ -136,7 +129,7 @@ export const generateResume = (data: PortfolioData) => {
   });
 
   // Projects & Entrepreneurship
-  addSectionHeader("PROJECTS");
+  addSectionHeader("Technical Projects");
   data.projects.forEach((proj) => {
     if (y > pageHeight - 40) { doc.addPage(); y = 15; }
     doc.setFont("helvetica", "bold");
@@ -159,7 +152,7 @@ export const generateResume = (data: PortfolioData) => {
   });
 
   // Certifications
-  addSectionHeader("CERTIFICATIONS");
+  addSectionHeader("Certifications");
   data.certifications.forEach((cert) => {
     if (y > pageHeight - 15) { doc.addPage(); y = 15; }
     doc.setFont("helvetica", "bold");
@@ -174,7 +167,7 @@ export const generateResume = (data: PortfolioData) => {
   });
 
   // Job Simulations
-  addSectionHeader("VIRTUAL EXPERIENCE");
+  addSectionHeader("Professional Simulations");
   data.jobSimulations.forEach((sim) => {
     if (y > pageHeight - 20) { doc.addPage(); y = 15; }
     doc.setFont("helvetica", "bold");

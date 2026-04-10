@@ -18,7 +18,8 @@ const ATS_KEYWORDS = [
   "metasploit", "burp suite", "owasp", "cloud security", "aws", "network security"
 ];
 
-/** Real-time ATS Scorer **/`nconst calculateAtsScore = (data: PortfolioData) => {
+/** Real-time ATS Scorer **/
+const calculateAtsScore = (data: PortfolioData) => {
   let score = 0;
   
   // Section 1: Content Presence (40 points)
