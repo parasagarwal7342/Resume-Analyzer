@@ -1,16 +1,67 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Download, ChevronRight, Terminal, Wand2 } from "lucide-react";
+import { Download, ChevronRight, Terminal, Wand2, RefreshCcw } from "lucide-react";
 import { usePortfolioData } from "../hooks/usePortfolioData";
 import { generateResume, generateCoverLetter } from "../utils/pdfGenerator";
 import { Link } from "wouter";
+import { useToast } from "../hooks/use-toast";
+import { PortfolioData } from "../data/portfolioData";
 
 export function Hero() {
   const { data } = usePortfolioData();
   const [roleIndex, setRoleIndex] = useState(0);
+  const [isOptimizing, setIsOptimizing] = useState(false);
+  const { toast } = useToast();
 
   // Hidden check based on URL query parameter ?admin=true
   const isAdmin = new URLSearchParams(window.location.search).get("admin") === "true";
+
+  const handleAdminDownload = async () => {
+    setIsOptimizing(true);
+    toast({
+      title: "Synthesizing AI Resume",
+      description: "Optimizing content for professional ATS standards...",
+    });
+
+    try {
+      const res = await fetch("/api/resumes/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ 
+          userData: data,
+          jobDescription: "Executive Information Security Professional",
+          template: "modern"
+        }),
+      });
+      
+      const optimized = await res.json();
+      const docData: PortfolioData = JSON.parse(JSON.stringify(data));
+      
+      if (optimized.content?.summary) docData.personal.bio = optimized.content.summary;
+      if (optimized.content?.experience) {
+        optimized.content.experience.forEach((optExp: any, i: number) => {
+          if (docData.experience[i]) {
+            docData.experience[i].achievements = optExp.achievements || docData.experience[i].achievements;
+          }
+        });
+      }
+
+      generateResume(docData);
+      toast({
+        title: "Success",
+        description: "ATS-Friendly resume has been processed and downloaded.",
+      });
+    } catch (error) {
+      toast({
+        title: "AI Optimization Unavailable",
+        description: "Downloading standard version instead.",
+        variant: "destructive"
+      });
+      generateResume(data);
+    } finally {
+      setIsOptimizing(false);
+    }
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -90,13 +141,14 @@ export function Hero() {
             {isAdmin && (
               <>
                 <button
-                  onClick={() => generateResume(data)}
-                  className="group relative px-8 py-4 bg-primary text-primary-foreground font-mono font-bold uppercase tracking-wider overflow-hidden rounded-sm"
+                  onClick={handleAdminDownload}
+                  disabled={isOptimizing}
+                  className="group relative px-8 py-4 bg-primary text-primary-foreground font-mono font-bold uppercase tracking-wider overflow-hidden rounded-sm disabled:opacity-70"
                 >
                   <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                   <span className="relative flex items-center gap-2">
-                    <Download size={18} />
-                    Download Resume
+                    {isOptimizing ? <RefreshCcw size={18} className="animate-spin" /> : <Download size={18} />}
+                    {isOptimizing ? "Optimizing..." : "Download Resume"}
                   </span>
                 </button>
 
