@@ -364,7 +364,7 @@ export const portfolioData = {
         "Secured intellectual property with official patent filings for Sentinel-AI technologies.",
       ],
       github: "https://github.com/parasagarwal7342/ai-spam-detector-w2",
-      demo: "http://localhost:5000",
+      demo: "https://sentinel-ai.paraditi.tech",
     },
     {
       id: "resume-analyzer",
