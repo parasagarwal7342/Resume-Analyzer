@@ -362,6 +362,48 @@ export const portfolioData = {
       github: "https://github.com/parasagarwal7342/ai-spam-detector-w2",
       demo: "http://localhost:5000",
     },
+    {
+      id: "resume-analyzer",
+      name: "Resume Analyzer & AI ATS",
+      subtitle: "Intelligent Resume Optimization Engine",
+      year: "2026",
+      category: "AI / CareerTech",
+      status: "Deployed",
+      featured: true,
+      isParaditiCorp: false,
+      description:
+        "A full-stack, enterprise-grade Next Generation Resume Analyzer platform. Utilizes OpenAI integration to perform comprehensive CV analysis, ATS scoring, and interactive AI capabilities. Fully dockerized microservices backend hosted on Google Cloud Run with a fast Vite/React frontend on Firebase.",
+      techStack: ["React", "Express", "Google Cloud Run", "Firebase", "OpenAI API", "Docker", "PostgreSQL"],
+      highlights: [
+        "Live Production Deployment on Google Cloud Run and Firebase Hosting",
+        "Automated ATS Parsing and Optimization Scoring via OpenAI",
+        "Full microservices architecture with a PostgreSQL database on Neon",
+        "Real-time streaming UI integration with Tailwind CSS",
+      ],
+      github: "https://github.com/parasagarwal7342/Resume-Analyzer",
+      demo: "https://portfolio-a6ccb.web.app",
+    },
+    {
+      id: "shadowguard",
+      name: "Paraditi ShadowGuard v2.0",
+      subtitle: "Sovereign AI Governance Platform",
+      year: "2026",
+      category: "Cybersecurity / AI",
+      status: "MVP Completed",
+      featured: true,
+      isParaditiCorp: true,
+      description:
+        "The world's most advanced software-only solution for enterprises to detect, control, and audit Shadow AI usage. Engineered with a Sovereign-First philosophy, utilizing Next.js, and a Python-based Neural Classification Engine to intercept real-time LLM prompt leakage across ChatGPT, Gemini, and Claude.",
+      techStack: ["Next.js", "Python", "Tailwind CSS", "AI Security", "SOC2 Automation"],
+      highlights: [
+        "CISO Command Center with Holographic Risk Gauges and telemetry feed",
+        "Browser extension intercepting network layer prompts with block protocols",
+        "Neural Classification Engine with Logistic normalization to calculate Threat Indexes",
+        "Immutable Compliance Audit Agent mapping to SOC2 protocols",
+      ],
+      github: "https://github.com/parasagarwal7342/Paraditi-ShadowGuard",
+      demo: null,
+    },
   ],
 
   paraditi: {
