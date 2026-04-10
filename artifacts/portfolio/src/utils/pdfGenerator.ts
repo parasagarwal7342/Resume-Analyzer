@@ -48,13 +48,13 @@ export const generateResume = (data: PortfolioData) => {
   doc.setFont("helvetica", "normal");
   doc.setFontSize(10);
   doc.setTextColor(40, 40, 40);
-  doc.text(sanitize(data.personal.location), margin, y);
+  doc.text(`Location: ${sanitize(data.personal.location)}`, margin, y);
   y += 5;
-  doc.text(sanitize(data.personal.phone), margin, y);
+  doc.text(`Phone: ${sanitize(data.personal.phone)}`, margin, y);
   y += 5;
-  doc.text(sanitize(data.personal.email), margin, y);
+  doc.text(`Email: ${sanitize(data.personal.email)}`, margin, y);
   y += 5;
-  doc.text(sanitize(data.personal.website.replace("https://", "")), margin, y);
+  doc.text(`Portfolio: ${sanitize(data.personal.website.replace("https://", ""))}`, margin, y);
   y += 10;
   
   // Professional Summary

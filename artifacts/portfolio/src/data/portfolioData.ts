@@ -6,7 +6,7 @@ export const portfolioData = {
     tagline:
       "Expertise in Penetration Testing, VAPT, and Ethical Hacking. Pursuing an M.Tech in Information Security, architecting the future of digital sovereignty at Paraditi Corp.",
     bio:
-      "Results-driven architecture strategist specializing in resilient defensive systems and Information Security. Currently completing an M.Tech at NSUT, centered on infrastructure protection through specialized Penetration Testing and Offensive Security methodologies. Orchestrating advanced validation frameworks and proactive threat response to safeguard digital sovereignty within the global commerce ecosystem.",
+      "Results-driven architecture strategist specializing in resilient defensive systems and Information Security. Currently completing an M.Tech at Netaji Subhas University of Technology, centered on infrastructure protection through specialized vulnerability assessment and penetration testing (VAPT) and Offensive Security methodologies. Orchestrating advanced validation frameworks and proactive threat response to safeguard digital sovereignty within the global commerce ecosystem.",
     location: "New Delhi, India — 110081",
     email: "parasagarwal7342@gmail.com",
     phone: "+91 8587897399",
@@ -96,9 +96,9 @@ export const portfolioData = {
   education: [
     {
       institution: "Netaji Subhas University of Technology",
-      degree: "M.Tech",
+      degree: "Master of Technology (M.Tech)",
       field: "Information Security",
-      location: "Delhi",
+      location: "New Delhi, India",
       startDate: "2025",
       endDate: "Expected Jan 2027",
       current: true,
@@ -106,9 +106,9 @@ export const portfolioData = {
     },
     {
       institution: "CRAW Security",
-      degree: "Diploma",
-      field: "Cyber Security & Ethical Hacking (Advanced Malware Analysis)",
-      location: "Delhi",
+      degree: "Post-Graduate Diploma",
+      field: "Cybersecurity & Ethical Hacking (Advanced Malware Analysis)",
+      location: "New Delhi, India",
       startDate: "2024",
       endDate: "Expected May 2026",
       current: true,
@@ -125,9 +125,9 @@ export const portfolioData = {
       gpa: null,
     },
     {
-      institution: "CBSE Board",
-      degree: "10th & 12th (School)",
-      field: "Science",
+      institution: "Central Board of Secondary Education (CBSE)",
+      degree: "High School and Higher Secondary Education (10th & 12th)",
+      field: "Science Stream",
       location: "India",
       startDate: "2019",
       endDate: "May 2021",
@@ -475,7 +475,7 @@ export const portfolioData = {
     name: "Paraditi Corp",
     tagline: "A Vision for Future Digital Sovereignty (Startup Concept)",
     description:
-      "Paraditi Corp is a conceptual framework for a future cybersecurity startup. It represents my vision for building an ecosystem of advanced security products designed to defend against modern fraud and cyber threats. While currently in the ideation phase, these projects demonstrate my approach to solving critical security challenges using AI, Blockchain, and Zero-Trust Architecture (NIST 800-207)s.",
+      "Paraditi Corp is a conceptual framework for a future cybersecurity startup. It represents my vision for building an ecosystem of advanced security products designed to defend against modern fraud and cyber threats. While currently in the ideation phase, these projects demonstrate my approach to solving critical security challenges using AI, Blockchain, and Zero-Trust Architecture (NIST 800-207).",
     products: ["Digital Shield v2.0 (Concept)", "ReturnShield (Concept)", "AutoCA 4.0 (Concept)", "HexGuard FIM (Active)", "Sentinel-AI (Active)"],
   },
 };
