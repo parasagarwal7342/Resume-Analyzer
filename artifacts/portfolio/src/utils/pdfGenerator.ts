@@ -56,7 +56,7 @@ export const generateResume = (data: PortfolioData) => {
   doc.text(contactInfo, pageWidth / 2, y, { align: "center" });
   
   y += 5;
-  const links = sanitize(`${data.personal.linkedin.replace("https://", "")} | ${data.personal.github.replace("https://", "")}`);
+  const links = sanitize(`${data.personal.linkedin.replace("https://", "")} | ${data.personal.github.replace("https://", "")} | ${data.personal.website.replace("https://", "")}`);
   doc.text(links, pageWidth / 2, y, { align: "center" });
 
   y += 10;
@@ -220,7 +220,7 @@ export const generateCoverLetter = (data: PortfolioData) => {
   y += 5;
   doc.text(`${data.personal.phone} | ${data.personal.email}`, 20, y);
   y += 5;
-  doc.text(`${data.personal.linkedin}`, 20, y);
+  doc.text(`${data.personal.linkedin.replace("https://", "")} | ${data.personal.website.replace("https://", "")}`, 20, y);
 
   y += 20;
   
