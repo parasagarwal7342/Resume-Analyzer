@@ -1,0 +1,26 @@
+# Git
+.git
+.gitignore
+
+# Node
+node_modules
+**/node_modules
+
+# Dist (built by the builder stage, not needed in context)
+**/dist
+
+# Dev / IDE files
+.vscode
+.idea
+*.log
+*.md
+
+# Replit specific
+.replit
+.replitignore
+.local
+.cache
+
+# Frontend artifacts (not needed for API server image)
+artifacts/portfolio
+artifacts/mockup-sandbox
