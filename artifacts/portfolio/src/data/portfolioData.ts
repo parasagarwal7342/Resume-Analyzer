@@ -6,7 +6,7 @@ export const portfolioData = {
     tagline:
       "Expertise in Penetration Testing, VAPT, and Ethical Hacking. Pursuing an M.Tech in Information Security, architecting the future of digital sovereignty at Paraditi Corp.",
     bio:
-      "Results-driven Cybersecurity Analyst and Information Security specialist with extensive expertise in Penetration Testing, VAPT, and Ethical Hacking. Pursuing an M.Tech in Information Security with a focus on Zero-Trust architectures and proactive incident response. Pursuing an M.Tech in Information Security with a focus on Zero-Trust architectures and proactive incident response. Advanced proficiency in Python security automation, Linux system hardening, and enterprise-grade vulnerability management. Innovating mission-critical defensive systems against complex digital payment fraud and emerging cyber-threats at Paraditi Corp. Expert in integrating global security standards with cutting-edge defensive methodologies to ensure digital sovereignty and infrastructure integrity.",
+      "Results-driven Cybersecurity Analyst and Information Security specialist with extensive expertise in Penetration Testing, VAPT, and Ethical Hacking. Pursuing an M.Tech in Information Security with a focus on Zero-Trust Architecture (NIST 800-207)s and proactive incident response. Pursuing an M.Tech in Information Security with a focus on Zero-Trust Architecture (NIST 800-207)s and proactive incident response. Advanced proficiency in Python security automation, Linux system hardening, and enterprise-grade vulnerability management. Innovating mission-critical defensive systems against complex digital payment fraud and emerging cyber-threats at Paraditi Corp. Expert in integrating global security standards with cutting-edge defensive methodologies to ensure digital sovereignty and infrastructure integrity.",
     location: "New Delhi, India — 110081",
     email: "parasagarwal7342@gmail.com",
     phone: "+91 8587897399",
@@ -53,7 +53,7 @@ export const portfolioData = {
     { name: "SIEM and SOC Operations (Splunk/ELK)", category: "Cybersecurity", level: 82 },
     { name: "Malware Analysis", category: "Cybersecurity", level: 80 },
     { name: "Web Security (XSS/SQLi)", category: "Cybersecurity", level: 88 },
-    { name: "Zero-Trust Architecture", category: "Cybersecurity", level: 85 },
+    { name: "Zero-Trust Architecture (NIST 800-207)", category: "Cybersecurity", level: 85 },
     // Networking
     { name: "TCP/IP & OSI Model", category: "Networking", level: 88 },
     { name: "Nmap & Wireshark", category: "Networking", level: 90 },
@@ -475,12 +475,13 @@ export const portfolioData = {
     name: "Paraditi Corp",
     tagline: "A Vision for Future Digital Sovereignty (Startup Concept)",
     description:
-      "Paraditi Corp is a conceptual framework for a future cybersecurity startup. It represents my vision for building an ecosystem of advanced security products designed to defend against modern fraud and cyber threats. While currently in the ideation phase, these projects demonstrate my approach to solving critical security challenges using AI, Blockchain, and Zero-Trust architectures.",
+      "Paraditi Corp is a conceptual framework for a future cybersecurity startup. It represents my vision for building an ecosystem of advanced security products designed to defend against modern fraud and cyber threats. While currently in the ideation phase, these projects demonstrate my approach to solving critical security challenges using AI, Blockchain, and Zero-Trust Architecture (NIST 800-207)s.",
     products: ["Digital Shield v2.0 (Concept)", "ReturnShield (Concept)", "AutoCA 4.0 (Concept)", "HexGuard FIM (Active)", "Sentinel-AI (Active)"],
   },
 };
 
 export type PortfolioData = typeof portfolioData;
+
 
 
 
