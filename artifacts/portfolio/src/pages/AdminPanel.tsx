@@ -42,6 +42,7 @@ const ATS_KEYWORDS = [
   if (achievementCount >= 3) score += 10;
   if (achievementCount >= 6) score += 10;
 
+  // Final Weighted Calculation
   return Math.round(score);
 };
 
@@ -685,4 +686,5 @@ export default function AdminPanel() {
     </div>
   );
 }
+
 
