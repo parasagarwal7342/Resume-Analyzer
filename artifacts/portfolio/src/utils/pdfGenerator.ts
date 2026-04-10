@@ -38,25 +38,27 @@ export const generateResume = (data: PortfolioData) => {
     y += 6;
   };
 
-  // Header Section - Left Aligned for best parsing
+  // Header Section - Single Column, Left Aligned
   doc.setFont("helvetica", "bold");
   doc.setFontSize(22);
   doc.setTextColor(0, 0, 0);
   doc.text(sanitize(data.personal.name), margin, y);
-  y += 8;
+  y += 10;
 
   doc.setFont("helvetica", "normal");
   doc.setFontSize(10);
-  doc.setTextColor(60, 60, 60);
+  doc.setTextColor(40, 40, 40);
   doc.text(sanitize(data.personal.location), margin, y);
   y += 5;
-  doc.text(sanitize(`${data.personal.phone}  |  ${data.personal.email}`), margin, y);
+  doc.text(sanitize(data.personal.phone), margin, y);
   y += 5;
-  doc.text(sanitize(data.personal.website), margin, y);
+  doc.text(sanitize(data.personal.email), margin, y);
+  y += 5;
+  doc.text(sanitize(data.personal.website.replace("https://", "")), margin, y);
   y += 10;
   
-  // Summary
-  addSectionHeader("Summary");
+  // Professional Summary
+  addSectionHeader("Professional Summary");
   doc.setFont("helvetica", "normal");
   doc.setFontSize(10);
   doc.setTextColor(40, 40, 40);
@@ -102,7 +104,7 @@ export const generateResume = (data: PortfolioData) => {
 
   y += 4;
 
-  // Professional Experience
+  // Work Experience
   addSectionHeader("Work Experience");
   data.experience.forEach((exp) => {
     if (y > pageHeight - 30) { doc.addPage(); y = 15; }
@@ -166,8 +168,8 @@ export const generateResume = (data: PortfolioData) => {
     y += 5;
   });
 
-  // Job Simulations
-  addSectionHeader("Professional Simulations");
+  // Virtual Internships
+  addSectionHeader("Virtual Internships");
   data.jobSimulations.forEach((sim) => {
     if (y > pageHeight - 20) { doc.addPage(); y = 15; }
     doc.setFont("helvetica", "bold");
