@@ -401,7 +401,7 @@ export const portfolioData = {
       techStack: ["Next.js", "Python", "Tailwind CSS", "AI Security", "SOC2 Automation"],
       highlights: [
         "Designed a comprehensive CISO Command Center featuring Holographic Risk Gauges and real-time telemetry feeds.",
-        "Developed a browser extension to intercept and secure network layer prompts leveraging specialized block protocols.",
+        "Developed a WASM-powered browser extension to intercept and secure network layer prompts leveraging specialized block protocols.",
         "Engineered a Neural Classification Engine utilizing Logistic normalization for accurate Threat Index calculation.",
         "Built an Immutable Compliance Audit Agent rigorously mapping to standard SOC2 protocols.",
       ],
@@ -481,6 +481,7 @@ export const portfolioData = {
 };
 
 export type PortfolioData = typeof portfolioData;
+
 
 
 
