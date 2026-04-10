@@ -164,6 +164,63 @@ paths:
               schema:
                 $ref: "#/components/schemas/JobMatchResult"
 
+  /ats/score:
+    post:
+      operationId: getAtsScore
+      tags: [resumes]
+      summary: Calculate detailed ATS score for a resume against a JD
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AtsScoreBody"
+      responses:
+        "200":
+          description: ATS Score Result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AtsResult"
+
+  /resumes/generate:
+    post:
+      operationId: generateResume
+      tags: [resumes]
+      summary: Generate an optimized resume from user data
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GenerateResumeBody"
+      responses:
+        "200":
+          description: Generated Resume
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GeneratedResumeResponse"
+
+  /resumes/{id}/optimize:
+    post:
+      operationId: optimizeResume
+      tags: [resumes]
+      summary: Optimize an existing resume
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Optimization result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OptimizationResult"
+
 components:
   schemas:
     HealthStatus:
@@ -466,3 +523,83 @@ components:
         - strengths
         - gaps
         - recommendation
+
+    AtsScoreBody:
+      type: object
+      properties:
+        resumeId:
+          type: integer
+        jobDescription:
+          type: string
+      required:
+        - resumeId
+        - jobDescription
+
+    AtsResult:
+      type: object
+      properties:
+        score:
+          type: number
+        keywordMatch:
+          type: object
+          properties:
+            matched:
+              type: array
+              items:
+                type: string
+            missing:
+              type: array
+              items:
+                type: string
+            densityScore:
+              type: number
+        semanticMatch:
+          type: object
+          properties:
+            fitScore:
+              type: number
+            explanation:
+              type: string
+        improvementSuggestions:
+          type: array
+          items:
+            type: string
+
+    GenerateResumeBody:
+      type: object
+      properties:
+        userData:
+          type: object
+        jobDescription:
+          type: string
+        template:
+          type: string
+      required:
+        - userData
+
+    GeneratedResumeResponse:
+      type: object
+      properties:
+        content:
+          type: object
+        optimizedDescription:
+          type: string
+        coverLetter:
+          type: string
+
+    OptimizationResult:
+      type: object
+      properties:
+        improvedBulletPoints:
+          type: array
+          items:
+            type: object
+            properties:
+              original:
+                type: string
+              improved:
+                type: string
+        overallFeedback:
+          type: string
+        formattingScore:
+          type: number

@@ -171,6 +171,56 @@ export interface JobMatchResult {
   recommendation: string;
 }
 
+export interface AtsScoreBody {
+  resumeId: number;
+  jobDescription: string;
+}
+
+export type AtsResultKeywordMatch = {
+  matched?: string[];
+  missing?: string[];
+  densityScore?: number;
+};
+
+export type AtsResultSemanticMatch = {
+  fitScore?: number;
+  explanation?: string;
+};
+
+export interface AtsResult {
+  score?: number;
+  keywordMatch?: AtsResultKeywordMatch;
+  semanticMatch?: AtsResultSemanticMatch;
+  improvementSuggestions?: string[];
+}
+
+export type GenerateResumeBodyUserData = { [key: string]: unknown };
+
+export interface GenerateResumeBody {
+  userData: GenerateResumeBodyUserData;
+  jobDescription?: string;
+  template?: string;
+}
+
+export type GeneratedResumeResponseContent = { [key: string]: unknown };
+
+export interface GeneratedResumeResponse {
+  content?: GeneratedResumeResponseContent;
+  optimizedDescription?: string;
+  coverLetter?: string;
+}
+
+export type OptimizationResultImprovedBulletPointsItem = {
+  original?: string;
+  improved?: string;
+};
+
+export interface OptimizationResult {
+  improvedBulletPoints?: OptimizationResultImprovedBulletPointsItem[];
+  overallFeedback?: string;
+  formattingScore?: number;
+}
+
 export type ListResumesParams = {
   limit?: number;
   offset?: number;

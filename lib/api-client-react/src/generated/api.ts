@@ -17,11 +17,16 @@ import type {
 } from "@tanstack/react-query";
 
 import type {
+  AtsResult,
+  AtsScoreBody,
   ErrorResponse,
+  GenerateResumeBody,
+  GeneratedResumeResponse,
   HealthStatus,
   JobMatchBody,
   JobMatchResult,
   ListResumesParams,
+  OptimizationResult,
   ParseResumeBody,
   Resume,
   ResumeListResponse,
@@ -623,4 +628,260 @@ export const useMatchResumeToJob = <
   TContext
 > => {
   return useMutation(getMatchResumeToJobMutationOptions(options));
+};
+
+/**
+ * @summary Calculate detailed ATS score for a resume against a JD
+ */
+export const getGetAtsScoreUrl = () => {
+  return `/api/ats/score`;
+};
+
+export const getAtsScore = async (
+  atsScoreBody: AtsScoreBody,
+  options?: RequestInit,
+): Promise<AtsResult> => {
+  return customFetch<AtsResult>(getGetAtsScoreUrl(), {
+    ...options,
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...options?.headers },
+    body: JSON.stringify(atsScoreBody),
+  });
+};
+
+export const getGetAtsScoreMutationOptions = <
+  TError = ErrorType<unknown>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof getAtsScore>>,
+    TError,
+    { data: BodyType<AtsScoreBody> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationOptions<
+  Awaited<ReturnType<typeof getAtsScore>>,
+  TError,
+  { data: BodyType<AtsScoreBody> },
+  TContext
+> => {
+  const mutationKey = ["getAtsScore"];
+  const { mutation: mutationOptions, request: requestOptions } = options
+    ? options.mutation &&
+      "mutationKey" in options.mutation &&
+      options.mutation.mutationKey
+      ? options
+      : { ...options, mutation: { ...options.mutation, mutationKey } }
+    : { mutation: { mutationKey }, request: undefined };
+
+  const mutationFn: MutationFunction<
+    Awaited<ReturnType<typeof getAtsScore>>,
+    { data: BodyType<AtsScoreBody> }
+  > = (props) => {
+    const { data } = props ?? {};
+
+    return getAtsScore(data, requestOptions);
+  };
+
+  return { mutationFn, ...mutationOptions };
+};
+
+export type GetAtsScoreMutationResult = NonNullable<
+  Awaited<ReturnType<typeof getAtsScore>>
+>;
+export type GetAtsScoreMutationBody = BodyType<AtsScoreBody>;
+export type GetAtsScoreMutationError = ErrorType<unknown>;
+
+/**
+ * @summary Calculate detailed ATS score for a resume against a JD
+ */
+export const useGetAtsScore = <
+  TError = ErrorType<unknown>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof getAtsScore>>,
+    TError,
+    { data: BodyType<AtsScoreBody> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationResult<
+  Awaited<ReturnType<typeof getAtsScore>>,
+  TError,
+  { data: BodyType<AtsScoreBody> },
+  TContext
+> => {
+  return useMutation(getGetAtsScoreMutationOptions(options));
+};
+
+/**
+ * @summary Generate an optimized resume from user data
+ */
+export const getGenerateResumeUrl = () => {
+  return `/api/resumes/generate`;
+};
+
+export const generateResume = async (
+  generateResumeBody: GenerateResumeBody,
+  options?: RequestInit,
+): Promise<GeneratedResumeResponse> => {
+  return customFetch<GeneratedResumeResponse>(getGenerateResumeUrl(), {
+    ...options,
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...options?.headers },
+    body: JSON.stringify(generateResumeBody),
+  });
+};
+
+export const getGenerateResumeMutationOptions = <
+  TError = ErrorType<unknown>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof generateResume>>,
+    TError,
+    { data: BodyType<GenerateResumeBody> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationOptions<
+  Awaited<ReturnType<typeof generateResume>>,
+  TError,
+  { data: BodyType<GenerateResumeBody> },
+  TContext
+> => {
+  const mutationKey = ["generateResume"];
+  const { mutation: mutationOptions, request: requestOptions } = options
+    ? options.mutation &&
+      "mutationKey" in options.mutation &&
+      options.mutation.mutationKey
+      ? options
+      : { ...options, mutation: { ...options.mutation, mutationKey } }
+    : { mutation: { mutationKey }, request: undefined };
+
+  const mutationFn: MutationFunction<
+    Awaited<ReturnType<typeof generateResume>>,
+    { data: BodyType<GenerateResumeBody> }
+  > = (props) => {
+    const { data } = props ?? {};
+
+    return generateResume(data, requestOptions);
+  };
+
+  return { mutationFn, ...mutationOptions };
+};
+
+export type GenerateResumeMutationResult = NonNullable<
+  Awaited<ReturnType<typeof generateResume>>
+>;
+export type GenerateResumeMutationBody = BodyType<GenerateResumeBody>;
+export type GenerateResumeMutationError = ErrorType<unknown>;
+
+/**
+ * @summary Generate an optimized resume from user data
+ */
+export const useGenerateResume = <
+  TError = ErrorType<unknown>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof generateResume>>,
+    TError,
+    { data: BodyType<GenerateResumeBody> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationResult<
+  Awaited<ReturnType<typeof generateResume>>,
+  TError,
+  { data: BodyType<GenerateResumeBody> },
+  TContext
+> => {
+  return useMutation(getGenerateResumeMutationOptions(options));
+};
+
+/**
+ * @summary Optimize an existing resume
+ */
+export const getOptimizeResumeUrl = (id: number) => {
+  return `/api/resumes/${id}/optimize`;
+};
+
+export const optimizeResume = async (
+  id: number,
+  options?: RequestInit,
+): Promise<OptimizationResult> => {
+  return customFetch<OptimizationResult>(getOptimizeResumeUrl(id), {
+    ...options,
+    method: "POST",
+  });
+};
+
+export const getOptimizeResumeMutationOptions = <
+  TError = ErrorType<unknown>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof optimizeResume>>,
+    TError,
+    { id: number },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationOptions<
+  Awaited<ReturnType<typeof optimizeResume>>,
+  TError,
+  { id: number },
+  TContext
+> => {
+  const mutationKey = ["optimizeResume"];
+  const { mutation: mutationOptions, request: requestOptions } = options
+    ? options.mutation &&
+      "mutationKey" in options.mutation &&
+      options.mutation.mutationKey
+      ? options
+      : { ...options, mutation: { ...options.mutation, mutationKey } }
+    : { mutation: { mutationKey }, request: undefined };
+
+  const mutationFn: MutationFunction<
+    Awaited<ReturnType<typeof optimizeResume>>,
+    { id: number }
+  > = (props) => {
+    const { id } = props ?? {};
+
+    return optimizeResume(id, requestOptions);
+  };
+
+  return { mutationFn, ...mutationOptions };
+};
+
+export type OptimizeResumeMutationResult = NonNullable<
+  Awaited<ReturnType<typeof optimizeResume>>
+>;
+
+export type OptimizeResumeMutationError = ErrorType<unknown>;
+
+/**
+ * @summary Optimize an existing resume
+ */
+export const useOptimizeResume = <
+  TError = ErrorType<unknown>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof optimizeResume>>,
+    TError,
+    { id: number },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationResult<
+  Awaited<ReturnType<typeof optimizeResume>>,
+  TError,
+  { id: number },
+  TContext
+> => {
+  return useMutation(getOptimizeResumeMutationOptions(options));
 };

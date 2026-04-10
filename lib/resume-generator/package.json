@@ -1,0 +1,16 @@
+{
+  "name": "@workspace/resume-generator",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --build"
+  },
+  "dependencies": {
+    "@workspace/integrations-openai-ai-server": "workspace:*",
+    "openai": "^4.82.0"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.2"
+  }
+}

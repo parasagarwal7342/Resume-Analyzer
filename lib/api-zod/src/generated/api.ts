@@ -371,3 +371,64 @@ export const MatchResumeToJobResponse = zod.object({
   gaps: zod.array(zod.string()),
   recommendation: zod.string(),
 });
+
+/**
+ * @summary Calculate detailed ATS score for a resume against a JD
+ */
+export const GetAtsScoreBody = zod.object({
+  resumeId: zod.number(),
+  jobDescription: zod.string(),
+});
+
+export const GetAtsScoreResponse = zod.object({
+  score: zod.number().optional(),
+  keywordMatch: zod
+    .object({
+      matched: zod.array(zod.string()).optional(),
+      missing: zod.array(zod.string()).optional(),
+      densityScore: zod.number().optional(),
+    })
+    .optional(),
+  semanticMatch: zod
+    .object({
+      fitScore: zod.number().optional(),
+      explanation: zod.string().optional(),
+    })
+    .optional(),
+  improvementSuggestions: zod.array(zod.string()).optional(),
+});
+
+/**
+ * @summary Generate an optimized resume from user data
+ */
+export const GenerateResumeBody = zod.object({
+  userData: zod.object({}).passthrough(),
+  jobDescription: zod.string().optional(),
+  template: zod.string().optional(),
+});
+
+export const GenerateResumeResponse = zod.object({
+  content: zod.object({}).passthrough().optional(),
+  optimizedDescription: zod.string().optional(),
+  coverLetter: zod.string().optional(),
+});
+
+/**
+ * @summary Optimize an existing resume
+ */
+export const OptimizeResumeParams = zod.object({
+  id: zod.coerce.number(),
+});
+
+export const OptimizeResumeResponse = zod.object({
+  improvedBulletPoints: zod
+    .array(
+      zod.object({
+        original: zod.string().optional(),
+        improved: zod.string().optional(),
+      }),
+    )
+    .optional(),
+  overallFeedback: zod.string().optional(),
+  formattingScore: zod.number().optional(),
+});

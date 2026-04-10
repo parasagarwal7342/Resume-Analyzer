@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Download, ChevronRight, Terminal } from "lucide-react";
+import { Download, ChevronRight, Terminal, Wand2 } from "lucide-react";
 import { usePortfolioData } from "../hooks/usePortfolioData";
 import { generateResume, generateCoverLetter } from "../utils/pdfGenerator";
+import { Link } from "wouter";
 
 export function Hero() {
   const { data } = usePortfolioData();
@@ -109,9 +110,20 @@ export function Hero() {
               </>
             )}
 
+            <Link
+              href="/resume-iq"
+              className="group relative px-8 py-4 bg-primary text-primary-foreground font-mono font-bold uppercase tracking-wider overflow-hidden rounded-sm"
+            >
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+              <span className="relative flex items-center gap-2">
+                <Wand2 size={18} />
+                ResumeIQ Pro
+              </span>
+            </Link>
+
             <a
               href="#projects"
-              className="px-8 py-4 text-foreground font-mono font-bold uppercase tracking-wider hover:text-primary transition-colors flex items-center gap-2"
+              className="px-8 py-4 border border-primary/50 text-primary font-mono font-bold uppercase tracking-wider hover:bg-primary/10 transition-colors rounded-sm flex items-center gap-2"
             >
               View Operations
               <ChevronRight size={18} />

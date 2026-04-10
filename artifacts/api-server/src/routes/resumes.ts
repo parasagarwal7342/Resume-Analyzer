@@ -3,6 +3,7 @@ import { db } from "@workspace/db";
 import { resumesTable } from "@workspace/db/schema";
 import { eq, desc, sql } from "drizzle-orm";
 import { openai } from "@workspace/integrations-openai-ai-server";
+import { optimizeResumeContent } from "@workspace/ai";
 import {
   ParseResumeBody,
   ListResumesQueryParams,
@@ -336,6 +337,31 @@ router.post("/resumes/:id/match", async (req, res) => {
   }
 
   res.json(matchResult);
+});
+
+router.post("/resumes/:id/optimize", async (req, res) => {
+  const params = ({ id: Number(req.params.id) });
+  if (isNaN(params.id)) {
+    res.status(400).json({ error: "Invalid ID" });
+    return;
+  }
+
+  const [resume] = await db
+    .select()
+    .from(resumesTable)
+    .where(eq(resumesTable.id, params.id));
+
+  if (!resume) {
+    res.status(404).json({ error: "Resume not found" });
+    return;
+  }
+
+  try {
+    const result = await optimizeResumeContent(resume.parsedData);
+    res.json(result);
+  } catch (error: any) {
+    res.status(500).json({ error: error.message || "Failed to optimize resume" });
+  }
 });
 
 export default router;

@@ -6,15 +6,25 @@
  * OpenAPI spec version: 0.1.0
  */
 
+export * from "./atsResult";
+export * from "./atsResultKeywordMatch";
+export * from "./atsResultSemanticMatch";
+export * from "./atsScoreBody";
 export * from "./certification";
 export * from "./contactInfo";
 export * from "./education";
 export * from "./errorResponse";
+export * from "./generatedResumeResponse";
+export * from "./generatedResumeResponseContent";
+export * from "./generateResumeBody";
+export * from "./generateResumeBodyUserData";
 export * from "./healthStatus";
 export * from "./jobMatchBody";
 export * from "./jobMatchResult";
 export * from "./jobMatchResultSkillsMatchItem";
 export * from "./listResumesParams";
+export * from "./optimizationResult";
+export * from "./optimizationResultImprovedBulletPointsItem";
 export * from "./parsedResumeData";
 export * from "./parsedResumeDataSeniorityLevel";
 export * from "./parseResumeBody";

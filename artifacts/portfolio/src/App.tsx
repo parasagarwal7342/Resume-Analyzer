@@ -5,6 +5,7 @@ import { TooltipProvider } from "./components/ui/tooltip";
 import NotFound from "./pages/not-found";
 import Portfolio from "./pages/Portfolio";
 import AdminPanel from "./pages/AdminPanel";
+import ResumeIQDashboard from "./pages/ResumeIQDashboard";
 
 const queryClient = new QueryClient();
 
@@ -13,6 +14,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Portfolio} />
       <Route path="/admin" component={AdminPanel} />
+      <Route path="/resume-iq" component={ResumeIQDashboard} />
       <Route component={NotFound} />
     </Switch>
   );

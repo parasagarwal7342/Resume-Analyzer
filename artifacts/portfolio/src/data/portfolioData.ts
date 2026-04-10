@@ -4,9 +4,9 @@ export const portfolioData = {
     initials: "PARAS",
     title: "Cybersecurity Analyst | Penetration Tester | VAPT Expert",
     tagline:
-      "Expertise in Penetration Testing, VAPT, and Ethical Hacking. Pursuing M.Tech in Information Security and Architecting the Future of Digital Sovereignty at Paraditi Corp.",
+      "Cybersecurity Professional currently pursuing M.Tech in Information Security. Passionate about identifying vulnerabilities and building secure digital ecosystems. Founder of Paraditi Corp.",
     bio:
-      "Dedicated Cybersecurity Specialist with a strong foundation in B.Tech Computer Science and currently advancing expertise through an M.Tech in Information Security. My focus lies in architecting resilient digital infrastructures through advanced Penetration Testing, VAPT, and Ethical Hacking methodologies. Beyond technical execution, I am the visionary behind Paraditi Corp — a conceptual startup framework designed to engineer next-generation defensive systems against evolving fraud and cyber-threats. My approach integrates a Zero-Trust philosophy with proactive incident response, ensuring that integrity and security are core architectural principles of the modern digital economy.",
+      "Dedicated Cybersecurity Specialist with a strong foundation in B.Tech Computer Science and currently advancing expertise through an M.Tech in Information Security. My focus lies in architecting resilient digital infrastructures through advanced Penetration Testing, VAPT, and Ethical Hacking methodologies. As the Founder of Paraditi Corp, I am engineering next-generation defensive systems against evolving fraud and cyber-threats, integrating a Zero-Trust philosophy with proactive incident response.",
     location: "New Delhi, India — 110081",
     email: "parasagarwal7342@gmail.com",
     phone: "+91 8587897399",
@@ -18,7 +18,7 @@ export const portfolioData = {
       "VAPT Specialist",
       "Ethical Hacker",
       "Python Security Developer",
-      "Paraditi Corp Visionary",
+      "Founder @ Paraditi Corp",
       "Cybersecurity Analyst",
     ],
     taglines: [
@@ -360,7 +360,28 @@ export const portfolioData = {
         "Officially fully filed under [Patent Pending: PARADITI CORP]",
       ],
       github: "https://github.com/parasagarwal7342/ai-spam-detector-w2",
-      demo: "http://localhost:5000",
+      demo: "https://parasagrawal03.netlify.app",
+    },
+    {
+      id: "resume-iq",
+      name: "ResumeIQ Pro",
+      subtitle: "AI-Powered ATS & Research System",
+      year: "2026",
+      category: "AI / CareerTech",
+      status: "MVP Deployed",
+      featured: true,
+      isParaditiCorp: true,
+      description:
+        "A standout portfolio project transforming resume analysis. Features a high-fidelity ATS scoring engine, AI-powered resume generator, and deep-match analytics. Built with modular backend micro-libraries and a premium Cyber-Dark dashboard. Transforming how candidates align with enterprise opportunities.",
+      techStack: ["React 19", "Vite", "Node.js", "OpenAI GPT-4o", "Drizzle ORM", "Framer Motion", "Tailwind CSS"],
+      highlights: [
+        "Advanced ATS scoring engine with semantic match analysis",
+        "AI-driven resume optimization and bullet point rewriting",
+        "One-click professional resume generation based on target JDs",
+        "Public portfolio link generation and skills visualization dashboard",
+      ],
+      github: "https://github.com/parasagarwal7342/Resume-Analyzer",
+      demo: "https://parasagrawal03.netlify.app/resume-iq",
     },
   ],
 
