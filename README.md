@@ -251,3 +251,11 @@
  ⭐ If you found this helpful, please star this repo! 
   
  </div> 
+
+
+## 🗺️ Roadmap
+- [x] AI Resume Parsing
+- [x] ATS Scoring Engine
+- [ ] Multi-language Support
+- [ ] Browser Extension
+
