@@ -421,7 +421,7 @@ export const portfolioData = {
         "A pioneering 3D geospatial intelligence platform designed for urban re-engineering in underprivileged communities. Leverages Computer Vision and Graph Theory mapping unstructured settlements and proposing mathematical Minimum Spanning Tree pathways for emergency infrastructure.",
       techStack: ["Python", "YOLOv8", "NetworkX", "WebGL", "PyDeck", "Edge AI"],
       highlights: [
-        "Engineered Autonomous Structural Detection utilizing high-resolution temporal imagery at the centimeter level.",
+        "Engineered Autonomous Structural Detection utilizing high-resolution temporal imagery at the centimeter-level (sub-5cm).",
         "Implemented AI-Native Urban Reblocking algorithms to dynamically identify optimal emergency access routes.",
         "Calculated Universal Beneficiary Scores (UBS) to efficiently prioritize and structure aid distribution.",
       ],
@@ -481,6 +481,7 @@ export const portfolioData = {
 };
 
 export type PortfolioData = typeof portfolioData;
+
 
 
 
