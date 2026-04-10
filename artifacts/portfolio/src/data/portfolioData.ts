@@ -6,7 +6,7 @@ export const portfolioData = {
     tagline:
       "Expertise in Penetration Testing, VAPT, and Ethical Hacking. Pursuing an M.Tech in Information Security, architecting the future of digital sovereignty at Paraditi Corp.",
     bio:
-      "Results-driven Cybersecurity Analyst and Information Security specialist with extensive expertise in Penetration Testing, VAPT, and Ethical Hacking. Pursuing an M.Tech in Information Security with a focus on Zero-Trust architectures and proactive incident response. Advanced proficiency in Python security automation, Linux system hardening, and enterprise-grade vulnerability management. Innovating mission-critical defensive systems against complex digital payment fraud and emerging cyber-threats at Paraditi Corp. Expert in integrating global security standards with cutting-edge defensive methodologies to ensure digital sovereignty and infrastructure integrity.",
+      "Results-driven Cybersecurity Analyst and Information Security specialist with extensive expertise in Penetration Testing, VAPT, and Ethical Hacking. Pursuing an M.Tech in Information Security with a focus on Zero-Trust architectures and proactive incident response. Pursuing an M.Tech in Information Security with a focus on Zero-Trust architectures and proactive incident response. Advanced proficiency in Python security automation, Linux system hardening, and enterprise-grade vulnerability management. Innovating mission-critical defensive systems against complex digital payment fraud and emerging cyber-threats at Paraditi Corp. Expert in integrating global security standards with cutting-edge defensive methodologies to ensure digital sovereignty and infrastructure integrity.",
     location: "New Delhi, India — 110081",
     email: "parasagarwal7342@gmail.com",
     phone: "+91 8587897399",
@@ -481,3 +481,4 @@ export const portfolioData = {
 };
 
 export type PortfolioData = typeof portfolioData;
+
