@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "AI-powered resume analysis with intelligent job matching capabilities.",
   "license": "UNLICENSED",
+  "packageManager": "pnpm@10.33.0",
   "scripts": {
     "build": "pnpm -r --if-present run build",
     "typecheck:libs": "tsc --build",
