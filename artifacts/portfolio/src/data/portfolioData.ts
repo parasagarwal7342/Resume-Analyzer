@@ -337,7 +337,7 @@ export const portfolioData = {
         "Week 1 Project: High-performance File Integrity Monitor utilizing deep system-level tracking to detect and neutralize zero-day ransomware patterns. Kernel-level syscall event tracing coupled with AI threat analytics. Built under Paraditi Corp.",
       techStack: ["Python", "PowerShell", "Kernel-level Tracing", "Ransomware Analytics", "SHA-256 Crypto"],
       highlights: [
-        "Engineered real-time file tampering detection algorithms to proactively secure against zero-day vulnerabilities.",
+        "Engineered sub-millisecond file tampering detection algorithms to proactively secure against zero-day vulnerabilities.",
         "Integrated AI-driven analytics to continuously track and identify lateral movement patterns.",
         "Implemented robust cryptographic anchoring utilizing SHA-256 for enhanced data integrity.",
         "Authored patent-pending algorithms for advanced File Integrity Monitoring via Paraditi Corp.",
@@ -481,6 +481,7 @@ export const portfolioData = {
 };
 
 export type PortfolioData = typeof portfolioData;
+
 
 
 
