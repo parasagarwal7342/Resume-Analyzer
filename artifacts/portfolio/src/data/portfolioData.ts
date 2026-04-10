@@ -379,7 +379,7 @@ export const portfolioData = {
         "A full-stack, enterprise-grade Next Generation Resume Analyzer platform. Utilizes OpenAI integration to perform comprehensive CV analysis, ATS scoring, and interactive AI capabilities. Fully dockerized microservices backend hosted on Google Cloud Run with a fast Vite/React frontend on Firebase.",
       techStack: ["React", "Express", "Google Cloud Run", "Firebase", "OpenAI API", "Docker", "PostgreSQL"],
       highlights: [
-        "Executed live production deployments leveraging Google Cloud Run and Firebase Hosting.",
+        "Executed live production deployments leveraging Dockerized Google Cloud Run and Firebase.",
         "Automated ATS Parsing and Optimization Scoring processes utilizing advanced OpenAI models.",
         "Architected a full microservices ecosystem supported by a scalable PostgreSQL database on Neon.",
         "Integrated real-time streaming UI components leveraging the Tailwind CSS framework.",
@@ -481,6 +481,7 @@ export const portfolioData = {
 };
 
 export type PortfolioData = typeof portfolioData;
+
 
 
 
