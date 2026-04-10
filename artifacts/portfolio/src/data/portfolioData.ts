@@ -56,7 +56,7 @@ export const portfolioData = {
     { name: "Zero-Trust Architecture (NIST 800-207)", category: "Cybersecurity", level: 85 },
     // Networking
     { name: "TCP/IP & OSI Model", category: "Networking", level: 88 },
-    { name: "Nmap & Wireshark", category: "Networking", level: 90 },
+    { name: "Nmap, Wireshark and TCPDump", category: "Networking", level: 90 },
     { name: "Firewall Configuration", category: "Networking", level: 84 },
     { name: "VPN & Cloud Security", category: "Networking", level: 82 },
     { name: "Network Topology", category: "Networking", level: 85 },
@@ -481,6 +481,7 @@ export const portfolioData = {
 };
 
 export type PortfolioData = typeof portfolioData;
+
 
 
 
