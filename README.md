@@ -21,7 +21,7 @@
   
  <br/> 
   
- ![Resume Analyzer Banner](https://via.placeholder.com/900x300/6366F1/ffffff?text=Resume+Analyzer+-+AI+Powered+Resume+Intelligence)  
+ ![Resume Analyzer Banner](https://via.placeholder.com/900x300/6366F1/ffffff?text=Resume+Intelligence+-+AI+Powered+Talent+Analytics)  
   
  </div> 
   
@@ -29,211 +29,56 @@
   
  ## ✨ Features 
   
- <table> 
- <tr> 
- <td width="50%"> 
+ - **🤖 AI Resume Parsing**: Extracts skills, experience, and contact info from PDF/DOCX using GPT-4o.
+ - **📈 ATS Scoring**: Real-time compatibility score against any job description.
+ - **🔍 Keyword Gap Analysis**: Identified missing skills to help you bypass recruitment filters.
+ - **🎨 Professional Dashboard**: High-fidelity "Cyber-Dark" UI for tracking applications.
+ - **📄 Resume Generator**: AI-powered tailoring to specific roles for maximum impact.
   
- ### 🧠 AI-Powered Parsing 
- Intelligently extracts skills, experience, education, and achievements from any resume format using advanced OpenAI GPT models. 
+ ## 🚀 Quick Start 
   
- </td> 
- <td width="50%"> 
+ ### Pragmatic Setup 
   
- ### 🎯 Job Matching 
- Compares your resume against job descriptions with a compatibility score and gap analysis. 
+ 1. **Clone the repo**: 
+    ```bash 
+    git clone https://github.com/parasagarwal7342/Resume-Analyzer.git 
+    ``` 
+ 2. **Install dependencies**: 
+    ```bash 
+    pnpm install 
+    ``` 
+ 3. **Configure Environment**: 
+    Create a `.env` file from `.env.example` and add your `OPENAI_API_KEY`. 
   
- </td> 
- </tr> 
- <tr> 
- <td width="50%"> 
+ 4. **Run the Dashboard**: 
+    ```bash 
+    pnpm --filter portfolio dev 
+    ``` 
   
- ### 📊 Skills Intelligence 
- Identifies skill clusters, highlights technical proficiencies, and suggests relevant improvements. 
-  
- </td> 
- <td width="50%"> 
-  
- ### 💡 Smart Recommendations 
- Generates actionable, personalized suggestions to improve your resume's impact. 
-  
- </td> 
- </tr> 
- <tr> 
- <td width="50%"> 
-  
- ### 🎨 Modern UI 
- A sleek, responsive dashboard built with Radix UI, Framer Motion, and Tailwind CSS. 
-  
- </td> 
- <td width="50%"> 
-  
- ### 🛠️ Monorepo Power 
- Cleanly separated frontend, backend, and shared libraries using a high-performance pnpm workspace. 
-  
- </td> 
- </tr> 
- </table> 
-  
- --- 
-  
- ## 🏗️ Architecture 
-  
- ``` 
- Resume-Analyzer/ 
- ├── 📁 artifacts/            # Main applications 
- │   ├── 📁 portfolio/        # Frontend React application 
- │   ├── 📁 api-server/       # Backend Express API 
- │   └── 📁 mockup-sandbox/   # UI Component sandbox 
- ├── 📁 lib/                  # Shared libraries & integrations 
- │   ├── 📁 integrations-openai-ai-server/ # OpenAI logic 
- │   ├── 📁 api-zod/          # Shared validation schemas 
- │   ├── 📁 db/               # Database & ORM configuration 
- │   └── ... 
- ├── 📁 attached_assets/      # Example resumes & static assets 
- ├── 📁 scripts/              # Build & utility scripts 
- ├── 📄 package.json          # Workspace configuration 
- ├── 📄 .vercel.json          # Vercel deployment config 
- └── 📄 netlify.toml          # Netlify deployment config 
- ``` 
-  
- --- 
-  
- ## 🚀 Getting Started 
-  
- ### Prerequisites 
-  
- - Node.js `v20+` 
- - pnpm `v9+` 
-  
- ```bash 
- npm install -g pnpm 
- ``` 
-  
- ### Installation 
-  
- ```bash 
- # 1. Clone the repository 
- git clone https://github.com/parasagarwal7342/Resume-Analyzer.git 
- cd Resume-Analyzer 
-  
- # 2. Install dependencies 
- pnpm install 
-  
- # 3. Set up environment variables 
- cp .env.example .env 
- # Add your API keys to .env 
-  
- # 4. Start the development server 
- pnpm dev 
- ``` 
-  
- --- 
-  
- ## 🔧 Configuration 
-  
- Create a `.env` file in the root directory: 
-  
- ```env 
- # AI Provider 
- AI_INTEGRATIONS_OPENAI_API_KEY=your_openai_api_key 
- AI_INTEGRATIONS_OPENAI_BASE_URL=https://api.openai.com/v1 
-  
- # Database 
- DATABASE_URL=your_database_connection_string 
-  
- # Admin Auth 
- ADMIN_PASSWORD=your_secure_password 
- ``` 
-  
- --- 
-  
- ## 📦 Deployment 
-  
- <details> 
- <summary><b>Deploy to Netlify</b></summary> 
-  
- ```bash 
- # Install Netlify CLI 
- npm install -g netlify-cli 
-  
- # Deploy 
- netlify deploy --prod 
- ``` 
-  
- Or click the button below: 
-  
- [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/parasagarwal7342/Resume-Analyzer) 
-  
- </details> 
-  
- <details> 
- <summary><b>Deploy to Vercel</b></summary> 
-  
- ```bash 
- # Install Vercel CLI 
- npm install -g vercel 
-  
- # Deploy 
- vercel --prod 
- ``` 
-  
- Or click the button below: 
-  
- [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/parasagarwal7342/Resume-Analyzer) 
-  
- </details> 
-  
- --- 
-  
- ## 🛠️ Tech Stack 
-  
- | Category | Technology | 
- |----------|-----------| 
- | **Language** | TypeScript | 
- | **Frontend** | React, Vite, Tailwind CSS | 
- | **Backend** | Node.js, Express.js | 
- | **Database** | PostgreSQL, Drizzle ORM | 
- | **AI Engine** | OpenAI GPT Models | 
- | **Deployment** | Netlify / Vercel | 
-  
- --- 
-  
- ## 📊 How It Works 
-  
- ```mermaid 
- graph LR 
-     A[📄 Upload Resume] --> B[🔍 AI Parser] 
-     B --> C[📊 Skills Extractor] 
-     B --> D[🏢 Experience Analyzer] 
-     C --> E[🎯 Job Matcher] 
-     D --> E 
-     E --> F[📈 Score & Report] 
-     F --> G[💡 Recommendations] 
- ``` 
-  
- 1. **Upload** your resume (PDF, DOCX, or plain text). 
- 2. **AI parses** the document using GPT models, extracting structured data. 
- 3. **Match** against a job description (optional). 
- 4. **Receive** a detailed score, gap analysis, and professional PDF summary. 
-  
- --- 
-  
- ## 🤝 Contributing 
-  
- Contributions are welcome! Here's how to get started: 
-  
- 1. **Fork** the repository. 
- 2. Create your feature branch: `git checkout -b feature/amazing-feature`. 
- 3. Commit your changes: `git commit -m 'feat: add amazing feature'`. 
- 4. Push to the branch: `git push origin feature/amazing-feature`. 
- 5. Open a **Pull Request**. 
-  
- --- 
-  
- ## 📄 License 
-  
- This project is under **All Rights Reserved** — see the [LICENSE](LICENSE) file for details. Unauthorized use is prohibited. 
-  
+ # Resume-Analyzer: AI-Powered Talent Intelligence Platform
+ 
+ ## Strategic Capabilities
+ 
+ - **🧠 Behavioral Archetyping**: Go beyond keyword matching. Our AI extracts intent, leadership potential, and cultural resonance.
+ - **🎯 Global Market Alignment**: Strategic compatibility scoring against international industry standards and job simulations.
+ - **📊 Intellectual Asset Assessment**: Quantifying technical depth, debt, and the 'leverageable' potential of a candidate.
+ - **🛡️ Secure Ingestion**: Built on Paraditi-grade security protocols with Argon2 hashing and immutable audit trails.
+ 
+ ## Technical Architecture
+ 
+ - **Frontend**: High-fidelity React 18 + TypeScript + Vite with a fluid 'Cyber-Dark' design system.
+ - **Intelligence Engine**: GPT-4o based extraction coupled with custom-trained regional intent models.
+ - **Data Engineering**: Drizzle ORM + PostgreSQL/SQLite for fast, reliable, and auditable data flows.
+ - **Security**: Zero-Trust philosophy with JWT-based authentication and full Zod validation.
+ 
+ ## Portfolio Integration
+ 
+ This repository hosts the **official portfolio** of **Paras Agarwal**, architected as a live demonstration of the platform's capabilities. It features interactive sections for:
+ - Strategic Expertise Roadmap
+ - Patented IP Showcases (Paraditi Corp)
+ - Verified Academic & Professional Tenure
+ - Real-time Deployment Analytics
+ 
  --- 
   
  ## 🙏 Acknowledgements 
@@ -251,3 +96,7 @@
  ⭐ If you found this helpful, please star this repo! 
   
  </div> 
+  
+ --- 
+  
+ © 2026 Paras Agarwal. All rights reserved. | Architected for Digital Sovereignty.
