@@ -5,7 +5,7 @@ export function usePortfolioData() {
   const [data, setData] = useState<PortfolioData>(defaultData);
 
   useEffect(() => {
-    const saved = localStorage.getItem("portfolio_admin_edits");
+    const saved = localStorage.getItem("portfolio_admin_edits_v2");
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
@@ -19,12 +19,12 @@ export function usePortfolioData() {
 
   const updateData = useCallback((newData: PortfolioData) => {
     setData(newData);
-    localStorage.setItem("portfolio_admin_edits", JSON.stringify(newData));
+    localStorage.setItem("portfolio_admin_edits_v2", JSON.stringify(newData));
   }, []);
 
   const resetData = useCallback(() => {
     setData(defaultData);
-    localStorage.removeItem("portfolio_admin_edits");
+    localStorage.removeItem("portfolio_admin_edits_v2");
   }, []);
 
   return { data, updateData, resetData };
