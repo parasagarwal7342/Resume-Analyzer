@@ -456,9 +456,9 @@ export const portfolioData = {
       category: "Full Stack / E-Commerce",
       status: "Deployed",
       featured: true,
-      isParavionCorp: false,
+      isParavionCorp: true,
       description:
-        "A high-performance, three-portal enterprise e-commerce platform built for SPA Enterprises, Delhi — the official distributor of National Geographic and Shraddha Arts & Jewels. Features customer shopping features overlaid with advanced, secure role-based portals for staff and ownership analytics.",
+        "THIS WEBSITE IS EXCLUSIVELY BUILT AND MAINTAINED BY PARAVION CORP FOR SPA ENTERPRISES. A high-performance, three-portal enterprise e-commerce platform. Features customer shopping features overlaid with advanced, secure role-based portals for staff and ownership analytics.",
       techStack: ["React 19", "Vite", "TypeScript", "Fastify", "Razorpay", "Anthropic Claude"],
       highlights: [
         "Architected a multi-portal ecosystem to provide distinct, optimized UX for Customers, Staff, and Owners.",
