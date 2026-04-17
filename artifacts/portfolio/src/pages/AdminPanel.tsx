@@ -563,7 +563,7 @@ export default function AdminPanel() {
               <Globe size={20} className="text-primary" /> Projects
             </h2>
             <button 
-              onClick={() => addItem('projects', { id: `proj-${Date.now()}`, name: '', subtitle: '', year: '2026', category: '', status: '', featured: false, isParaditiCorp: false, description: '', techStack: [], highlights: [] })}
+              onClick={() => addItem('projects', { id: `proj-${Date.now()}`, name: '', subtitle: '', year: '2026', category: '', status: '', featured: false, isParavionCorp: false, description: '', techStack: [], highlights: [] })}
               className="text-xs font-mono bg-primary/10 text-primary px-3 py-1 rounded border border-primary/20 flex items-center gap-2 hover:bg-primary/20"
             >
               <Plus size={14} /> Add Project
@@ -650,10 +650,10 @@ export default function AdminPanel() {
           </div>
         </section>
 
-        {/* Paraditi Corp */}
+        {/* Paravion Corp */}
         <section className="bg-card border border-border rounded-lg p-6 space-y-6">
           <h2 className="text-xl font-bold font-mono border-b border-border pb-4 flex items-center gap-2">
-            <Shield size={20} className="text-primary" /> Paraditi Corp Setup
+            <Shield size={20} className="text-primary" /> Paravion Corp Setup
           </h2>
           
           <div className="space-y-4">
@@ -661,16 +661,16 @@ export default function AdminPanel() {
               <label className="text-xs font-mono uppercase text-muted-foreground">Company Tagline</label>
               <input 
                 type="text" 
-                value={editData.paraditi.tagline}
-                onChange={(e) => setEditData({...editData, paraditi: {...editData.paraditi, tagline: e.target.value}})}
+                value={editData.paravion.tagline}
+                onChange={(e) => setEditData({...editData, paravion: {...editData.paravion, tagline: e.target.value}})}
                 className="w-full bg-background border border-border rounded p-2 text-sm font-mono"
               />
             </div>
             <div className="space-y-2">
               <label className="text-xs font-mono uppercase text-muted-foreground">Company Description</label>
               <textarea 
-                value={editData.paraditi.description}
-                onChange={(e) => setEditData({...editData, paraditi: {...editData.paraditi, description: e.target.value}})}
+                value={editData.paravion.description}
+                onChange={(e) => setEditData({...editData, paravion: {...editData.paravion, description: e.target.value}})}
                 rows={4}
                 className="w-full bg-background border border-border rounded p-2 text-sm font-sans resize-y"
               />

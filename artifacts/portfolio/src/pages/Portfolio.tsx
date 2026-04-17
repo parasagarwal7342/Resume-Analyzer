@@ -4,7 +4,7 @@ import { About } from "../components/About";
 import { Skills } from "../components/Skills";
 import { Experience } from "../components/Experience";
 import { Projects } from "../components/Projects";
-import { Paraditi } from "../components/Paraditi";
+import { Paravion } from "../components/Paravion";
 import { Education } from "../components/Education";
 import { Certifications } from "../components/Certifications";
 import { JobSimulations } from "../components/JobSimulations";
@@ -23,7 +23,7 @@ export default function Portfolio() {
         <Skills />
         <Experience />
         <Projects />
-        <Paraditi />
+        <Paravion />
         <Certifications />
         <JobSimulations />
         <Contact />

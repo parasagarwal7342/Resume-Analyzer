@@ -4,7 +4,7 @@ export const portfolioData = {
     initials: "PARAS",
     title: "Cybersecurity Analyst",
     tagline:
-      "Expertise in Penetration Testing, VAPT, and Ethical Hacking. Pursuing an M.Tech in Information Security, architecting the future of digital sovereignty at Paraditi Corp.",
+      "Expertise in Penetration Testing, VAPT, and Ethical Hacking. Pursuing an M.Tech in Information Security, architecting the future of digital sovereignty at Paravion Corp.",
     bio:
       "Results-driven architecture strategist specializing in resilient defensive systems and Information Security. Currently completing an M.Tech at Netaji Subhas University of Technology, centered on infrastructure protection through specialized vulnerability assessment and penetration testing (VAPT) and Offensive Security methodologies. Orchestrating advanced validation frameworks and proactive threat response to safeguard digital sovereignty within the global commerce ecosystem.",
     location: "New Delhi, India — 110081",
@@ -12,19 +12,19 @@ export const portfolioData = {
     phone: "+91 8587897399",
     linkedin: "https://linkedin.com/in/paras-agrawal-a1b691201",
     github: "https://github.com/parasagarwal7342",
-    website: "https://paraditicorp.com",
+    website: "https://paravioncorp.com",
     availableForWork: true,
     roles: [
       "Penetration Tester",
       "VAPT Specialist",
       "Ethical Hacker",
       "Python Security Developer",
-      "Paraditi Corp Visionary",
+      "Paravion Corp Visionary",
       "Cybersecurity Analyst",
     ],
     taglines: [
       "Cybersecurity Infrastructure Specialist | Network Security",
-      "Designing the Future of Security at Paraditi Corp",
+      "Designing the Future of Security at Paravion Corp",
       "M.Tech InfoSec Professional | VAPT & Penetration Testing",
       "Secure Digital Ecosystem Architect",
       "Zero Trust Strategy & Deployment — Cybersecurity Professional",
@@ -248,7 +248,7 @@ export const portfolioData = {
       category: "AI / Web",
       status: "Developed",
       featured: true,
-      isParaditiCorp: false,
+      isParavionCorp: false,
       description:
         "Constructed a robust backend leveraging Spring Boot and MySQL, featuring advanced cryptographic hashing and systemic SQL injection prevention. Pioneered a responsive interface with projected roadmaps for distributed ledger integration and cross-platform accessibility.",
       techStack: ["Spring Boot", "MySQL", "Python", "all-MiniLM-L6-v2", "AI/ML", "Argon hashing", "React"],
@@ -269,9 +269,9 @@ export const portfolioData = {
       category: "FinTech / Security",
       status: "Prototype",
       featured: true,
-      isParaditiCorp: true,
+      isParavionCorp: true,
       description:
-        "A real-time security OS that intercepts every UPI/digital payment transaction before authorization — eliminating fraud at the network edge. The Universal Beneficiary Score (UBS) Engine analyzes multi-nodal transaction histories in under 14ms. Currently securing 14.4M+ nodal points with 8 core patents pending. Built under Paraditi Corp.",
+        "A real-time security OS that intercepts every UPI/digital payment transaction before authorization — eliminating fraud at the network edge. The Universal Beneficiary Score (UBS) Engine analyzes multi-nodal transaction histories in under 14ms. Currently securing 14.4M+ nodal points with 8 core patents pending. Built under Paravion Corp.",
       techStack: ["Node.js", "React", "Android Capacitor", "Behavioral Mapping", "Edge AI", "RAG", "Blockchain"],
       highlights: [
         "Achieved 14ms Universal Beneficiary Score (UBS) Engine latency on edge nodes, invisibly neutralizing threat actors.",
@@ -290,7 +290,7 @@ export const portfolioData = {
       category: "FinTech / AI",
       status: "Prototype",
       featured: true,
-      isParaditiCorp: true,
+      isParavionCorp: true,
       description:
         "A multi-tier verification framework protecting enterprise sellers from fraudulent returns on global platforms. Harnesses pre-shipment video analytics, anchors data to the Polygon ledger, and employs computer vision for warehouse validation. Rectifies an annual INR 40 Billion industry loss.",
       techStack: ["TensorFlow", "OpenCV", "Polygon Blockchain", "Python", "Node.js", "React", "Mobile SDK"],
@@ -311,9 +311,9 @@ export const portfolioData = {
       category: "FinTech / AI",
       status: "Prototype",
       featured: false,
-      isParaditiCorp: true,
+      isParavionCorp: true,
       description:
-        "A full-stack AI platform revolutionizing financial compliance for consumers, CAs, and business owners. Features one-click AI filing with Gemini 1.5 Pro document extraction, CA audit panel, real-time tax projection, sovereign health score, and blockchain audit trail. Specialized portals for stock market, legal advisory, and AI-powered financial chat assistant. Built under Paraditi Corp.",
+        "A full-stack AI platform revolutionizing financial compliance for consumers, CAs, and business owners. Features one-click AI filing with Gemini 1.5 Pro document extraction, CA audit panel, real-time tax projection, sovereign health score, and blockchain audit trail. Specialized portals for stock market, legal advisory, and AI-powered financial chat assistant. Built under Paravion Corp.",
       techStack: ["React 18", "Vite", "Node.js", "SQLite", "Google Gemini 1.5 Pro", "Framer Motion", "Recharts", "Blockchain"],
       highlights: [
         "Automated document extraction utilizing Gemini 1.5 Pro for rapid processing of invoices, salary slips, and bank statements.",
@@ -332,9 +332,9 @@ export const portfolioData = {
       category: "Cybersecurity / Low-Level",
       status: "MVP Completed",
       featured: true,
-      isParaditiCorp: true,
+      isParavionCorp: true,
       description:
-        "Week 1 Project: High-performance File Integrity Monitor utilizing deep system-level tracking to detect and neutralize zero-day ransomware patterns. Kernel-level syscall event tracing coupled with AI threat analytics. Built under Paraditi Corp.",
+        "Week 1 Project: High-performance File Integrity Monitor utilizing deep system-level tracking to detect and neutralize zero-day ransomware patterns. Kernel-level syscall event tracing coupled with AI threat analytics. Built under Paravion Corp.",
       techStack: ["Python", "PowerShell", "Kernel-level Tracing", "Ransomware Analytics", "SHA-256 Crypto"],
       highlights: [
         "Streamlined distributed file tampering detection protocols to proactively neutralize emerging threats.",
@@ -353,7 +353,7 @@ export const portfolioData = {
       category: "Cybersecurity / Machine Learning",
       status: "Deployed",
       featured: true,
-      isParaditiCorp: true,
+      isParavionCorp: true,
       description:
         "An advanced, IP-hardened email fraud detection framework. Utilizes four-layer Sovereign Logic Fusion (SLF) consisting of Structural Integrity Audit (SFA), DNA matching, Machine Learning ensembles, and Explainable AI (XAI) to flag threats based on SHAP-interpreted Non-Linear Manipulation Entropy.",
       techStack: ["Python", "Flask", "XGBoost", "NLTK", "Scikit", "Cyber-Dark UI", "AOB v3.0"],
@@ -364,7 +364,7 @@ export const portfolioData = {
         "Secured intellectual property with official patent filings for Sentinel-AI technologies.",
       ],
       github: "https://github.com/parasagarwal7342/ai-spam-detector-w2",
-      demo: "https://sentinel-ai.paraditi.tech",
+      demo: "https://sentinel-ai.paravion.tech",
     },
     {
       id: "resume-analyzer",
@@ -374,7 +374,7 @@ export const portfolioData = {
       category: "AI / CareerTech",
       status: "Deployed",
       featured: true,
-      isParaditiCorp: false,
+      isParavionCorp: false,
       description:
         "A full-stack, enterprise-grade Next Generation Resume Analyzer platform. Utilizes OpenAI integration to perform comprehensive CV analysis, ATS scoring, and interactive AI capabilities. Fully dockerized microservices backend hosted on Google Cloud Run with a fast Vite/React frontend on Firebase.",
       techStack: ["React", "Express", "Google Cloud Run", "Firebase", "OpenAI API", "Docker", "PostgreSQL"],
@@ -385,17 +385,17 @@ export const portfolioData = {
         "Integrated real-time streaming UI components leveraging the Tailwind CSS framework.",
       ],
       github: "https://github.com/parasagarwal7342/Resume-Analyzer",
-      demo: "https://paraditicorp.com",
+      demo: "https://paravioncorp.com",
     },
     {
       id: "shadowguard",
-      name: "Paraditi ShadowGuard v2.0",
+      name: "Paravion ShadowGuard v2.0",
       subtitle: "Sovereign AI Governance Platform",
       year: "2026",
       category: "Cybersecurity / AI",
       status: "MVP Completed",
       featured: true,
-      isParaditiCorp: true,
+      isParavionCorp: true,
       description:
         "The world's most advanced software-only solution for enterprises to detect, control, and audit Shadow AI usage. Engineered with a Sovereign-First philosophy, utilizing Next.js, and a Python-based Neural Classification Engine to intercept real-time LLM prompt leakage across ChatGPT, Gemini, and Claude.",
       techStack: ["Next.js", "Python", "Tailwind CSS", "AI Security", "SOC2 Automation"],
@@ -405,7 +405,7 @@ export const portfolioData = {
         "Engineered a Neural Classification Engine utilizing Logistic normalization for accurate Threat Index calculation.",
         "Built an Immutable Compliance Audit Agent rigorously mapping to standard SOC2 protocols.",
       ],
-      github: "https://github.com/parasagarwal7342/Paraditi-ShadowGuard",
+      github: "https://github.com/parasagarwal7342/Paravion-ShadowGuard",
       demo: null,
     },
     {
@@ -416,7 +416,7 @@ export const portfolioData = {
       category: "AI / Infrastructure",
       status: "Production Ready",
       featured: true,
-      isParaditiCorp: true,
+      isParavionCorp: true,
       description:
         "A pioneering 3D geospatial intelligence platform designed for urban re-engineering in underprivileged communities. Leverages Computer Vision and Graph Theory mapping unstructured settlements and proposing mathematical Minimum Spanning Tree pathways for emergency infrastructure.",
       techStack: ["Python", "YOLOv8", "NetworkX", "WebGL", "PyDeck", "Edge AI"],
@@ -436,7 +436,7 @@ export const portfolioData = {
       category: "Cybersecurity / OS",
       status: "Deployed",
       featured: false,
-      isParaditiCorp: true,
+      isParavionCorp: true,
       description:
         "A mission-critical apartment and society management ecosystem, built as a high-fidelity Digital Twin. Provides a unified, voice-integrated sovereign command center for autonomous facility management, equipped with AES-encrypted visitor nodes.",
       techStack: ["React 18", "Vite", "Framer Motion", "IoT SDK", "Blockchain", "Tailwind CSS"],
@@ -456,7 +456,7 @@ export const portfolioData = {
       category: "Full Stack / E-Commerce",
       status: "Deployed",
       featured: true,
-      isParaditiCorp: false,
+      isParavionCorp: false,
       description:
         "A high-performance, three-portal enterprise e-commerce platform built for SPA Enterprises, Delhi — the official distributor of National Geographic and Shraddha Arts & Jewels. Features customer shopping features overlaid with advanced, secure role-based portals for staff and ownership analytics.",
       techStack: ["React 19", "Vite", "TypeScript", "Fastify", "Razorpay", "Anthropic Claude"],
@@ -471,11 +471,11 @@ export const portfolioData = {
     },
   ],
 
-  paraditi: {
-    name: "Paraditi Corp",
+  paravion: {
+    name: "Paravion Corp",
     tagline: "A Vision for Future Digital Sovereignty (Startup Concept)",
     description:
-      "Paraditi Corp is a conceptual framework for a future cybersecurity startup. It represents my vision for building an ecosystem of advanced security products designed to defend against modern fraud and cyber threats. While currently in the ideation phase, these projects demonstrate my approach to solving critical security challenges using AI, Blockchain, and Zero-Trust Architecture (NIST 800-207).",
+      "Paravion Corp is a conceptual framework for a future cybersecurity startup. It represents my vision for building an ecosystem of advanced security products designed to defend against modern fraud and cyber threats. While currently in the ideation phase, these projects demonstrate my approach to solving critical security challenges using AI, Blockchain, and Zero-Trust Architecture (NIST 800-207).",
     products: ["Digital Shield v2.0 (Concept)", "ReturnShield (Concept)", "AutoCA 4.0 (Concept)", "HexGuard FIM (Active)", "Sentinel-AI (Active)"],
   },
 };
