@@ -224,7 +224,7 @@ export const generateCoverLetter = (data: PortfolioData) => {
   y += 10;
 
   doc.setFontSize(11);
-  const p1 = `I am writing to express my strong interest in joining your team as a Cybersecurity Professional. With a foundation in Penetration Testing, Ethical Hacking, and Vulnerability Assessment, coupled with my entrepreneurial experience as the Founder of Paravion Corp, I bring a unique blend of offensive security expertise and product-building vision.`;
+  const p1 = `I am writing to express my strong interest in joining your team as a Cybersecurity Professional. With a foundation in Penetration Testing, Ethical Hacking, and Vulnerability Assessment, coupled with my entrepreneurial experience as the Founder of Paravion Tech, I bring a unique blend of offensive security expertise and product-building vision.`;
   const splitP1 = doc.splitTextToSize(p1, pageWidth - 40);
   doc.text(splitP1, 20, y);
   y += (splitP1.length * 5) + 5;
@@ -234,7 +234,7 @@ export const generateCoverLetter = (data: PortfolioData) => {
   doc.text(splitP2, 20, y);
   y += (splitP2.length * 5) + 5;
 
-  const p3 = `What sets me apart is my ability to approach security both as a hacker and an architect. At Paravion Corp, I've built AI-powered security OS prototypes designed to intercept digital payment fraud in real-time. This dual perspective ensures that I not only understand how systems break but also how to build them securely from the ground up.`;
+  const p3 = `What sets me apart is my ability to approach security both as a hacker and an architect. At Paravion Tech, I've built AI-powered security OS prototypes designed to intercept digital payment fraud in real-time. This dual perspective ensures that I not only understand how systems break but also how to build them securely from the ground up.`;
   const splitP3 = doc.splitTextToSize(p3, pageWidth - 40);
   doc.text(splitP3, 20, y);
   y += (splitP3.length * 5) + 5;

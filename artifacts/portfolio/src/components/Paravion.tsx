@@ -115,7 +115,7 @@ export function Paravion() {
             <span className="text-[10px] font-mono uppercase tracking-[0.2em]">Intellectual Property Protection</span>
           </div>
           <p className="text-[11px] font-mono text-muted-foreground/60 leading-relaxed uppercase tracking-widest text-center px-4">
-            Legal Notice: Except for Sahaj, all original ideas, architectural frameworks, and proprietary algorithms of Paravion Corp are strictly Patented and Copyrighted © 2026. Any unauthorized reproduction, adaptation, or distribution will be met with immediate legal action.
+            Legal Notice: Except for Sahaj, all original ideas, architectural frameworks, and proprietary algorithms of Paravion Tech are strictly Patented and Copyrighted © 2026. Any unauthorized reproduction, adaptation, or distribution will be met with immediate legal action.
           </p>
         </motion.div>
       </div>

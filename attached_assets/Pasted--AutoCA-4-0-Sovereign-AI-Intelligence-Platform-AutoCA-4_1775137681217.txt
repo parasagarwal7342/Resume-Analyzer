@@ -22,7 +22,7 @@ AutoCA 4.0 is a cutting-edge, full-stack application designed to revolutionize f
 
 ### 4. Specialized Portals
 - **Stock Market Hub:** Technical, data-dense interface for market analysis and expert advisory.
-- **Legal Advisory Portal:** Refined, luxury-themed portal for corporate and tax legal counsel.
+- **Legal Advisory Portal:** Refined, luxury-themed portal for techorate and tax legal counsel.
 - **Neural Assistant:** Atmospheric, glassmorphic chat interface for financial queries.
 
 ### 5. Advanced Security

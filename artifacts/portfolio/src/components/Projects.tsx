@@ -29,11 +29,11 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className={`bg-card border ${project.isParavionCorp ? 'border-primary/50' : 'border-card-border'} p-8 rounded-lg relative overflow-hidden group hover:border-primary transition-colors flex flex-col h-full`}
+              className={`bg-card border ${project.isParavionTech ? 'border-primary/50' : 'border-card-border'} p-8 rounded-lg relative overflow-hidden group hover:border-primary transition-colors flex flex-col h-full`}
             >
-              {project.isParavionCorp && (
+              {project.isParavionTech && (
                 <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 font-mono uppercase tracking-wider rounded-bl-lg z-10">
-                  Paravion Corp
+                  Paravion Tech
                 </div>
               )}
               

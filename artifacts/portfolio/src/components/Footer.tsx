@@ -28,7 +28,7 @@ export function Footer() {
             <ul className="space-y-2 font-mono text-sm text-muted-foreground">
               <li><a href="#about" className="hover:text-primary transition-colors">About</a></li>
               <li><a href="#projects" className="hover:text-primary transition-colors">Projects</a></li>
-              <li><a href="#paravion" className="hover:text-primary transition-colors">Paravion Corp</a></li>
+              <li><a href="#paravion" className="hover:text-primary transition-colors">Paravion Tech</a></li>
               <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
             </ul>
           </div>
